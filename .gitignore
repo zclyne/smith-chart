@@ -1,6 +1,6 @@
 venv
 *.pyc
-
+.idea
 
 *.sublime-project
 *.sublime-workspace

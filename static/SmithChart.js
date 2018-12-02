@@ -50,6 +50,14 @@ SmithChart.prototype.setSelectionByZ = function(z) {
     this.drawCursorLayer(this.cursorLayer)
 }
 
+SmithChart.prototype.setSelectionByY = function(y) {
+    this.selection = new Selection({
+        y: y
+    })
+
+    this.drawCursorLayer(this.cursorLayer)
+}
+
 SmithChart.prototype._configureTool = function () {
     
     var self = this

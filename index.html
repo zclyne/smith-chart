@@ -76,6 +76,17 @@
 
 		})
 
+        $("#text-y-r,#text-y-i").change(function (event) {
+
+			var r = parseFloat($("#text-y-r").val())
+			var i = parseFloat($("#text-y-i").val())
+
+			app.setSelectionByY(new Complex(r, i))
+
+			updatePanel()
+
+		})
+
 	})
 
 	function updatePanel () {
@@ -87,16 +98,22 @@
 
 			$("#text-gamma-r").val(app.cursor.gamma.r.toFixed(2))
 			$("#text-gamma-i").val(app.cursor.gamma.i.toFixed(2))
+            $("#text-rho").val(app.cursor.rho.toFixed(2))
 			$("#text-z-r").val(app.cursor.z.r.toFixed(2))
 			$("#text-z-i").val(app.cursor.z.i.toFixed(2))
+            $("#text-y-r").val(app.cursor.y.r.toFixed(2))
+			$("#text-y-i").val(app.cursor.y.i.toFixed(2))
 
 		} else {
 			$(".selection-values").css("color", "black")
 
 			$("#text-gamma-r").val(app.selection.gamma.r.toFixed(2))
 			$("#text-gamma-i").val(app.selection.gamma.i.toFixed(2))
+            $("#text-rho").val(app.selection.rho.toFixed(2))
 			$("#text-z-r").val(app.selection.z.r.toFixed(2))
 			$("#text-z-i").val(app.selection.z.i.toFixed(2))
+            $("#text-y-r").val(app.selection.y.r.toFixed(2))
+			$("#text-y-i").val(app.selection.y.i.toFixed(2))
 		}
 
 	}
@@ -130,7 +147,7 @@
 			<form>
 				<div class="row">
 					<div class="large-4 columns">
-						<p>Reflection Coefficent (Gamma)</p>
+						<p>Gamma</p>
 					</div>
 					<div class="large-4 columns">
 						<div class="row collapse">
@@ -156,7 +173,23 @@
 
 				<div class="row">
 					<div class="large-4 columns">
-						<p>Normalized Load Impedance (z)</p>
+						<p>VSWR</p>
+					</div>
+					<div class="large-4 columns">
+                        <input class="selection-values" id="text-rho" type="text" placeholder="----" />
+					</div>
+                    <div class="large-4 columns">
+					</div>
+				</div>
+			</form>
+
+			<hr />
+
+            <form>
+
+				<div class="row">
+					<div class="large-4 columns">
+						<p>Impedance</p>
 					</div>
 					<div class="large-4 columns">
 						<div class="row collapse">
@@ -179,9 +212,65 @@
 						</div>
 					</div>
 				</div>
+
+                <div class="row">
+					<div class="large-4 columns">
+						<p>Admittance</p>
+					</div>
+					<div class="large-4 columns">
+						<div class="row collapse">
+							<div class="large-10 columns">
+								<input class="selection-values" id="text-y-r" type="text" placeholder="----" />
+							</div>
+							<div class="large-2 columns selection-values-markup">
+								<span class="postfix">+</span>
+							</div>
+						</div>
+					</div>
+					<div class="large-4 columns">
+						<div class="row collapse">
+							<div class="large-2 columns selection-values-markup">
+								<span class="prefix"><strong>j</strong></span>
+							</div>
+							<div class="large-10 columns">
+								<input class="selection-values" id="text-y-i" type="text" placeholder="----" />
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</form>
 
-			<hr />
+            <hr />
+
+            <form>
+				<div class="row">
+					<div class="large-4 columns">
+						<p>dmax</p>
+					</div>
+					<div class="large-4 columns">
+                        <input class="selection-values" id="text-dmax" type="text" placeholder="----" />
+
+					</div>
+					<div class="large-4 columns">
+					</div>
+				</div>
+
+                <div class="row">
+					<div class="large-4 columns">
+						<p>dmin</p>
+					</div>
+					<div class="large-4 columns">
+                        <input class="selection-values" id="text-dmin" type="text" placeholder="----" />
+
+					</div>
+					<div class="large-4 columns">
+					</div>
+				</div>
+
+			</form>
+
+            <hr />
 
 		</div>
 	</div>
