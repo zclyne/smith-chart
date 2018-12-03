@@ -11,8 +11,8 @@
 
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="static/foundation-5.0.2/css/foundation.css">
-    <script src="static/foundation-5.0.2/js/vendor/custom.modernizr.js"></script>
+    <link rel="stylesheet" href="static/foundation-5.5.3/css/foundation.css">
+    <script src="static/foundation-5.5.3/js/vendor/modernizr.js"></script>
 
     <script src="static/classy.js"></script>
     <script src="static/Complex.js"></script>
@@ -139,144 +139,164 @@
 
 <div class="large-5 columns">
 
-    <h2>Smith Chart</h2>
-    <hr/>
+    <ul class="tabs" data-tab="">
+        <li class="tab-title active"><a href="#home" aria-selected="true" tabindex="0">圆图</a></li>
+        <li class="tab-title"><a href="#menu1" aria-selected="false" tabindex="-1">电路 1</a></li>
+        <li class="tab-title"><a href="#menu2" aria-selected="false" tabindex="-1">电路 2</a></li>
+        <li class="tab-title"><a href="#menu3" aria-selected="false" tabindex="-1">电路 3</a></li>
+    </ul>
+    <div class="tabs-content">
+        <div class="content active" id="home" aria-hidden="false" tabindex="0">
+            <div class="panel">
 
-    <div class="panel">
-
-        <form>
-            <div class="row">
-                <div class="large-4 columns">
-                    <p>Gamma</p>
-                </div>
-                <div class="large-4 columns">
-                    <div class="row collapse">
-                        <div class="large-10 columns">
-                            <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"/>
+                <form>
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <p>Gamma</p>
                         </div>
-                        <div class="large-2 columns selection-values-markup">
-                            <span class="postfix">+</span>
+                        <div class="large-4 columns">
+                            <div class="row collapse">
+                                <div class="large-10 columns">
+                                    <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"/>
+                                </div>
+                                <div class="large-2 columns selection-values-markup">
+                                    <span class="postfix">+</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="large-4 columns">
-                    <div class="row collapse">
-                        <div class="large-2 columns selection-values-markup">
-                            <span class="prefix"><strong>j</strong></span>
-                        </div>
-                        <div class="large-10 columns">
-                            <input class="selection-values" id="text-gamma-i" type="text" placeholder="----"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="large-4 columns">
-                    <p>VSWR</p>
-                </div>
-                <div class="large-4 columns">
-                    <input class="selection-values" id="text-rho" type="text" placeholder="----"/>
-                </div>
-                <div class="large-4 columns">
-                </div>
-            </div>
-        </form>
-
-        <hr/>
-
-        <form>
-
-            <div class="row">
-                <div class="large-4 columns">
-                    <p>Impedance</p>
-                </div>
-                <div class="large-4 columns">
-                    <div class="row collapse">
-                        <div class="large-10 columns">
-                            <input class="selection-values" id="text-z-r" type="text" placeholder="----"/>
-                        </div>
-                        <div class="large-2 columns selection-values-markup">
-                            <span class="postfix">+</span>
+                        <div class="large-4 columns">
+                            <div class="row collapse">
+                                <div class="large-2 columns selection-values-markup">
+                                    <span class="prefix"><strong>j</strong></span>
+                                </div>
+                                <div class="large-10 columns">
+                                    <input class="selection-values" id="text-gamma-i" type="text" placeholder="----"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="large-4 columns">
-                    <div class="row collapse">
-                        <div class="large-2 columns selection-values-markup">
-                            <span class="prefix"><strong>j</strong></span>
-                        </div>
-                        <div class="large-10 columns">
-                            <input class="selection-values" id="text-z-i" type="text" placeholder="----"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="large-4 columns">
-                    <p>Admittance</p>
-                </div>
-                <div class="large-4 columns">
-                    <div class="row collapse">
-                        <div class="large-10 columns">
-                            <input class="selection-values" id="text-y-r" type="text" placeholder="----"/>
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <p>VSWR</p>
                         </div>
-                        <div class="large-2 columns selection-values-markup">
-                            <span class="postfix">+</span>
+                        <div class="large-4 columns">
+                            <input class="selection-values" id="text-rho" type="text" placeholder="----"/>
+                        </div>
+                        <div class="large-4 columns">
                         </div>
                     </div>
-                </div>
-                <div class="large-4 columns">
-                    <div class="row collapse">
-                        <div class="large-2 columns selection-values-markup">
-                            <span class="prefix"><strong>j</strong></span>
+                </form>
+
+                <hr/>
+
+                <form>
+
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <p>Impedance</p>
                         </div>
-                        <div class="large-10 columns">
-                            <input class="selection-values" id="text-y-i" type="text" placeholder="----"/>
+                        <div class="large-4 columns">
+                            <div class="row collapse">
+                                <div class="large-10 columns">
+                                    <input class="selection-values" id="text-z-r" type="text" placeholder="----"/>
+                                </div>
+                                <div class="large-2 columns selection-values-markup">
+                                    <span class="postfix">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-4 columns">
+                            <div class="row collapse">
+                                <div class="large-2 columns selection-values-markup">
+                                    <span class="prefix"><strong>j</strong></span>
+                                </div>
+                                <div class="large-10 columns">
+                                    <input class="selection-values" id="text-z-i" type="text" placeholder="----"/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <p>Admittance</p>
+                        </div>
+                        <div class="large-4 columns">
+                            <div class="row collapse">
+                                <div class="large-10 columns">
+                                    <input class="selection-values" id="text-y-r" type="text" placeholder="----"/>
+                                </div>
+                                <div class="large-2 columns selection-values-markup">
+                                    <span class="postfix">+</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-4 columns">
+                            <div class="row collapse">
+                                <div class="large-2 columns selection-values-markup">
+                                    <span class="prefix"><strong>j</strong></span>
+                                </div>
+                                <div class="large-10 columns">
+                                    <input class="selection-values" id="text-y-i" type="text" placeholder="----"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <hr/>
+
+                <form>
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <p>dmax</p>
+                        </div>
+                        <div class="large-4 columns">
+                            <input class="selection-values" id="text-dmax" type="text" placeholder="----"/>
+
+                        </div>
+                        <div class="large-4 columns">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="large-4 columns">
+                            <p>dmin</p>
+                        </div>
+                        <div class="large-4 columns">
+                            <input class="selection-values" id="text-dmin" type="text" placeholder="----"/>
+
+                        </div>
+                        <div class="large-4 columns">
+                        </div>
+                    </div>
+
+                </form>
+
+                <hr/>
+
             </div>
-
-        </form>
-
-        <hr/>
-
-        <form>
-            <div class="row">
-                <div class="large-4 columns">
-                    <p>dmax</p>
-                </div>
-                <div class="large-4 columns">
-                    <input class="selection-values" id="text-dmax" type="text" placeholder="----"/>
-
-                </div>
-                <div class="large-4 columns">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="large-4 columns">
-                    <p>dmin</p>
-                </div>
-                <div class="large-4 columns">
-                    <input class="selection-values" id="text-dmin" type="text" placeholder="----"/>
-
-                </div>
-                <div class="large-4 columns">
-                </div>
-            </div>
-
-        </form>
-
-        <hr/>
-
+        </div>
+        <div class="content" id="menu1" aria-hidden="true" tabindex="-1">
+            <h3>菜单 1</h3>
+            <p>一些文本内容 1</p>
+        </div>
+        <div class="content" id="menu2" aria-hidden="true" tabindex="-1">
+            <h3>菜单 2</h3>
+            <p>一些文本内容 2</p>
+        </div>
+        <div class="content" id="menu3" aria-hidden="true" tabindex="-1">
+            <h3>菜单 3</h3>
+            <p>一些文本内容 3</p>
+        </div>
     </div>
+
 </div>
 
 
-<script src="static/foundation-5.0.2/js/foundation.min.js"></script>
+<script src="static/foundation-5.5.3/js/foundation.min.js"></script>
 
 <script>
     $(document).foundation();
