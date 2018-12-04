@@ -28,16 +28,20 @@
 
         input.selection-values {
             font-size: 24px;
-            height: 50px;
+            height: 40px;
         }
 
         div.selection-values-markup {
-            height: 50px;
+            height: 40px;
         }
 
         div.selection-values-markup > span {
-            height: 50px;
-            line-height: 50px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .tab-title {
+            width: 14%;
         }
 
     </style>
@@ -131,22 +135,25 @@
 
 <body>
 
-<div class="large-7 columns">
+<div class="large-6 columns">
     <canvas id="paperSurface" style="width:100%">
 
     </canvas>
 </div>
 
-<div class="large-5 columns">
+<div class="large-6 columns">
 
     <ul class="tabs" data-tab="">
-        <li class="tab-title active"><a href="#home" aria-selected="true" tabindex="0">圆图</a></li>
-        <li class="tab-title"><a href="#menu1" aria-selected="false" tabindex="-1">电路 1</a></li>
-        <li class="tab-title"><a href="#menu2" aria-selected="false" tabindex="-1">电路 2</a></li>
-        <li class="tab-title"><a href="#menu3" aria-selected="false" tabindex="-1">电路 3</a></li>
+        <li class="tab-title active"><a href="#home">圆图</a></li>
+        <li class="tab-title"><a href="#menu1">LⅠ型</a></li>
+        <li class="tab-title"><a href="#menu2">LⅡ型</a></li>
+        <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
+        <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
+        <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
+        <li class="tab-title"><a href="#menu3">πⅡ型</a></li>
     </ul>
     <div class="tabs-content">
-        <div class="content active" id="home" aria-hidden="false" tabindex="0">
+        <div class="content active" id="home">
             <div class="panel">
 
                 <form>
@@ -279,15 +286,187 @@
 
             </div>
         </div>
-        <div class="content" id="menu1" aria-hidden="true" tabindex="-1">
-            <h3>菜单 1</h3>
-            <p>一些文本内容 1</p>
+        <div class="content" id="menu1">
+            <div class="panel">
+                <div class="row">
+                    img something
+                </div>
+                <div class="row collapse">
+                    <div class="large-6 columns">
+                        <div class="panel">
+                            <p>设置元件参数</p>
+
+                            <form>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>L(uH)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-5 columns">
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>C1(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>C2(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <hr/>
+
+                            <form>
+
+                                <button type="button" class="button tiny" >计算可匹配负载阻抗范围</button>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>实部</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>虚部</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="large-6 columns">
+                        <div class="panel">
+                            <p>设置负载和电感值</p>
+
+                            <form>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>Z(Ω)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>+j</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>L(uH)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-5 columns">
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <hr/>
+
+                            <form>
+
+                                <button type="button" class="button tiny">计算参考电容值</button>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>C1(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-5 columns">
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>C2(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                    <div class="large-5 columns">
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-6 columns">
+                                        <button type="button" class="button tiny">元件承压值</button>
+                                    </div>
+                                    <div class="large-6 columns">
+                                        <button type="button" class="button tiny">在圆图显示</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-        <div class="content" id="menu2" aria-hidden="true" tabindex="-1">
+        <div class="content" id="menu2">
             <h3>菜单 2</h3>
             <p>一些文本内容 2</p>
         </div>
-        <div class="content" id="menu3" aria-hidden="true" tabindex="-1">
+        <div class="content" id="menu3">
             <h3>菜单 3</h3>
             <p>一些文本内容 3</p>
         </div>
