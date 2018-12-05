@@ -11,7 +11,7 @@
 
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" href="static/foundation-5.5.3/css/foundation.css">
+    <link rel="stylesheet" href="static/foundation-5.5.3/css/foundation.min.css">
     <script src="static/foundation-5.5.3/js/vendor/modernizr.js"></script>
 
     <script src="static/classy.js"></script>
@@ -42,6 +42,8 @@
 
         .tab-title {
             width: 14%;
+            padding: 10px;
+            line-height: 20px;
         }
 
     </style>
@@ -134,27 +136,48 @@
 
 
 <body>
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name">
+      <h1><a href="#">WebSiteName</a></h1>
+    </li>
+    <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。
+      如果需要只显示图片，可以删除 "Menu" 文本 -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
 
+  <section class="top-bar-section">
+    <ul class="left">
+      <li class="active"><a href="#home">Home</a></li>
+      <li class="divider"></li>
+      <li><a href="#menu1">Page 1</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Page 2</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Page 3</a></li>
+      <li class="divider"></li>
+    </ul>
+  </section>
+</nav>
+
+<ul class="tabs" data-tab="">
+    <li class="tab-title active"><a href="#home">圆图</a></li>
+    <li class="tab-title"><a href="#menu1">LⅠ型</a></li>
+    <li class="tab-title"><a href="#menu2">LⅡ型</a></li>
+    <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
+    <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
+    <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
+    <li class="tab-title"><a href="#menu3">πⅡ型</a></li>
+</ul>
 <div class="large-6 columns">
     <canvas id="paperSurface" style="width:100%">
-
     </canvas>
 </div>
 
 <div class="large-6 columns">
-
-    <ul class="tabs" data-tab="">
-        <li class="tab-title active"><a href="#home">圆图</a></li>
-        <li class="tab-title"><a href="#menu1">LⅠ型</a></li>
-        <li class="tab-title"><a href="#menu2">LⅡ型</a></li>
-        <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
-        <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
-        <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
-        <li class="tab-title"><a href="#menu3">πⅡ型</a></li>
-    </ul>
-    <div class="tabs-content">
-        <div class="content active" id="home">
-            <div class="panel">
+    <div class="panel">
+        <div class="tabs-content">
+            <div class="content active" id="home">
 
                 <form>
                     <div class="row">
@@ -194,11 +217,8 @@
                         </div>
                     </div>
                 </form>
-
                 <hr/>
-
                 <form>
-
                     <div class="row">
                         <div class="large-4 columns">
                             <p>Impedance</p>
@@ -252,9 +272,7 @@
                     </div>
 
                 </form>
-
                 <hr/>
-
                 <form>
                     <div class="row">
                         <div class="large-4 columns">
@@ -281,15 +299,35 @@
                     </div>
 
                 </form>
-
                 <hr/>
 
             </div>
-        </div>
-        <div class="content" id="menu1">
-            <div class="panel">
+            <div class="content" id="menu1">
                 <div class="row">
-                    img something
+                    <div class="large-6 columns">
+                        <img src="static/img/circuit_L1.png" height="50"/>
+                    </div>
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                                    <div class="large-6 columns">
+                                        <p>工作频率(MHz)</p>
+                                    </div>
+                                    <div class="large-6 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                               placeholder="----"/>
+                                    </div>
+                                </div>
+
+                        <div class="row collapse">
+                                    <div class="large-6 columns">
+                                        <button type="button" class="button tiny">开始</button>
+                                    </div>
+                                    <div class="large-6 columns">
+                                        <button type="button" class="button tiny">帮助</button>
+                                    </div>
+                                </div>
+                    </div>
+
                 </div>
                 <div class="row collapse">
                     <div class="large-6 columns">
@@ -346,7 +384,7 @@
 
                             <form>
 
-                                <button type="button" class="button tiny" >计算可匹配负载阻抗范围</button>
+                                <button type="button" class="button tiny">计算可匹配负载阻抗范围</button>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
                                         <p>实部</p>
@@ -458,19 +496,19 @@
                         </div>
                     </div>
                 </div>
+
             </div>
-
-
-        </div>
-        <div class="content" id="menu2">
-            <h3>菜单 2</h3>
-            <p>一些文本内容 2</p>
-        </div>
-        <div class="content" id="menu3">
-            <h3>菜单 3</h3>
-            <p>一些文本内容 3</p>
+            <div class="content" id="menu2">
+                <h3>菜单 2</h3>
+                <p>一些文本内容 2</p>
+            </div>
+            <div class="content" id="menu3">
+                <h3>菜单 3</h3>
+                <p>一些文本内容 3</p>
+            </div>
         </div>
     </div>
+
 
 </div>
 
