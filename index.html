@@ -50,73 +50,73 @@
 
         $(document).ready(function () {
 
-            $(window).trigger("resize")
+            $(window).trigger("resize");
 
-            paper.setup($("#paperSurface").get(0))
+            paper.setup($("#paperSurface").get(0));
 
             app = new SmithChart($("#paperSurface").width(), $("#paperSurface").height(), {
                 stateUpdated: updatePanel
-            })
+            });
 
             $("#text-gamma-i,#text-gamma-r").change(function (event) {
 
-                var r = parseFloat($("#text-gamma-r").val())
-                var i = parseFloat($("#text-gamma-i").val())
+                var r = parseFloat($("#text-gamma-r").val());
+                var i = parseFloat($("#text-gamma-i").val());
 
-                app.setSelectionByGamma(new Complex(r, i))
+                app.setSelectionByGamma(new Complex(r, i));
 
                 updatePanel()
 
-            })
+            });
 
             $("#text-z-r,#text-z-i").change(function (event) {
 
-                var r = parseFloat($("#text-z-r").val())
-                var i = parseFloat($("#text-z-i").val())
+                var r = parseFloat($("#text-z-r").val());
+                var i = parseFloat($("#text-z-i").val());
 
-                app.setSelectionByZ(new Complex(r, i))
+                app.setSelectionByZ(new Complex(r, i));
 
                 updatePanel()
 
-            })
+            });
 
             $("#text-y-r,#text-y-i").change(function (event) {
 
-                var r = parseFloat($("#text-y-r").val())
-                var i = parseFloat($("#text-y-i").val())
+                var r = parseFloat($("#text-y-r").val());
+                var i = parseFloat($("#text-y-i").val());
 
-                app.setSelectionByY(new Complex(r, i))
+                app.setSelectionByY(new Complex(r, i));
 
                 updatePanel()
 
             })
 
-        })
+        });
 
         function updatePanel() {
 
-            console.log("updating")
+            console.log("updating");
 
             if (app.selection == null) {
-                $(".selection-values").css("color", "lightgray")
+                $(".selection-values").css("color", "lightgray");
 
-                $("#text-gamma-r").val(app.cursor.gamma.r.toFixed(2))
-                $("#text-gamma-i").val(app.cursor.gamma.i.toFixed(2))
-                $("#text-rho").val(app.cursor.rho.toFixed(2))
-                $("#text-z-r").val(app.cursor.z.r.toFixed(2))
-                $("#text-z-i").val(app.cursor.z.i.toFixed(2))
-                $("#text-y-r").val(app.cursor.y.r.toFixed(2))
+                $("#text-gamma-r").val(app.cursor.gamma.r.toFixed(2));
+                $("#text-gamma-i").val(app.cursor.gamma.i.toFixed(2));
+                $("#text-rho").val(app.cursor.rho.toFixed(2));
+                $("#text-z-r").val(app.cursor.z.r.toFixed(2));
+                $("#text-z-i").val(app.cursor.z.i.toFixed(2));
+                $("#text-y-r").val(app.cursor.y.r.toFixed(2));
                 $("#text-y-i").val(app.cursor.y.i.toFixed(2))
 
             } else {
-                $(".selection-values").css("color", "black")
+                $(".selection-values").css("color", "black");
 
-                $("#text-gamma-r").val(app.selection.gamma.r.toFixed(2))
-                $("#text-gamma-i").val(app.selection.gamma.i.toFixed(2))
-                $("#text-rho").val(app.selection.rho.toFixed(2))
-                $("#text-z-r").val(app.selection.z.r.toFixed(2))
-                $("#text-z-i").val(app.selection.z.i.toFixed(2))
-                $("#text-y-r").val(app.selection.y.r.toFixed(2))
+                $("#text-gamma-r").val(app.selection.gamma.r.toFixed(2));
+                $("#text-gamma-i").val(app.selection.gamma.i.toFixed(2));
+                $("#text-rho").val(app.selection.rho.toFixed(2));
+                $("#text-z-r").val(app.selection.z.r.toFixed(2));
+                $("#text-z-i").val(app.selection.z.i.toFixed(2));
+                $("#text-y-r").val(app.selection.y.r.toFixed(2));
                 $("#text-y-i").val(app.selection.y.i.toFixed(2))
             }
 
