@@ -40,11 +40,14 @@
             line-height: 40px;
         }
 
-        .tab-title {
-            width: 14%;
-            padding: 10px;
-            line-height: 20px;
+        .tabs .tab-title>a{
+            color: #ffffff;
         }
+
+        .top-bar{
+            margin: 10px;
+        }
+
 
     </style>
 
@@ -137,38 +140,28 @@
 
 <body>
 <nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name">
-      <h1><a href="#">WebSiteName</a></h1>
-    </li>
-    <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。
-      如果需要只显示图片，可以删除 "Menu" 文本 -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-    <ul class="left">
-      <li class="active"><a href="#home">Home</a></li>
-      <li class="divider"></li>
-      <li><a href="#menu1">Page 1</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Page 2</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Page 3</a></li>
-      <li class="divider"></li>
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">Smith Chart</a></h1>
+        </li>
+        <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。
+          如果需要只显示图片，可以删除 "Menu" 文本 -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-  </section>
+
+    <section class="top-bar-section">
+        <ul class="right tabs" data-tab="">
+            <li class="tab-title active"><a href="#home">圆图</a></li>
+            <li class="tab-title"><a href="#menu1">LⅠ型</a></li>
+            <li class="tab-title"><a href="#menu2">LⅡ型</a></li>
+            <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
+            <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
+            <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
+            <li class="tab-title"><a href="#menu3">πⅡ型</a></li>
+        </ul>
+    </section>
 </nav>
 
-<ul class="tabs" data-tab="">
-    <li class="tab-title active"><a href="#home">圆图</a></li>
-    <li class="tab-title"><a href="#menu1">LⅠ型</a></li>
-    <li class="tab-title"><a href="#menu2">LⅡ型</a></li>
-    <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
-    <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
-    <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
-    <li class="tab-title"><a href="#menu3">πⅡ型</a></li>
-</ul>
 <div class="large-6 columns">
     <canvas id="paperSurface" style="width:100%">
     </canvas>
@@ -309,31 +302,30 @@
                     </div>
                     <div class="large-6 columns">
                         <div class="row collapse">
-                                    <div class="large-6 columns">
-                                        <p>工作频率(MHz)</p>
-                                    </div>
-                                    <div class="large-6 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
-                                    </div>
-                                </div>
+                            <div class="large-6 columns">
+                                <p>工作频率(MHz)</p>
+                            </div>
+                            <div class="large-6 columns">
+                                <input class="selection-values" id="text-gamma-r" type="text"
+                                       placeholder="----"/>
+                            </div>
+                        </div>
 
                         <div class="row collapse">
-                                    <div class="large-6 columns">
-                                        <button type="button" class="button tiny">开始</button>
-                                    </div>
-                                    <div class="large-6 columns">
-                                        <button type="button" class="button tiny">帮助</button>
-                                    </div>
-                                </div>
+                            <div class="large-6 columns">
+                                <button type="button" class="button tiny">开始</button>
+                            </div>
+                            <div class="large-6 columns">
+                                <button type="button" class="button tiny">帮助</button>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
-                <div class="row collapse">
+                <hr/>
+                <div class="row">
                     <div class="large-6 columns">
-                        <div class="panel">
-                            <p>设置元件参数</p>
-
+                        <p>设置元件参数</p>
                             <form>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
@@ -379,9 +371,7 @@
                                     </div>
                                 </div>
                             </form>
-
                             <hr/>
-
                             <form>
 
                                 <button type="button" class="button tiny">计算可匹配负载阻抗范围</button>
@@ -418,13 +408,9 @@
                                     </div>
                                 </div>
                             </form>
-
-                        </div>
                     </div>
                     <div class="large-6 columns">
-                        <div class="panel">
-                            <p>设置负载和电感值</p>
-
+                        <p>设置负载和电感值</p>
                             <form>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
@@ -455,9 +441,7 @@
                                 </div>
 
                             </form>
-
                             <hr/>
-
                             <form>
 
                                 <button type="button" class="button tiny">计算参考电容值</button>
@@ -492,8 +476,6 @@
                                     </div>
                                 </div>
                             </form>
-
-                        </div>
                     </div>
                 </div>
 
