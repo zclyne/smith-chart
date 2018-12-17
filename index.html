@@ -156,7 +156,7 @@
             <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
             <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
             <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
-            <li class="tab-title"><a href="#menu3">πⅡ型</a></li>
+            <li class="tab-title"><a href="#menu6">πⅡ型</a></li>
         </ul>
     </section>
 </nav>
@@ -484,6 +484,209 @@
             <div class="content" id="menu3">
                 <h3>菜单 3</h3>
                 <p>一些文本内容 3</p>
+            </div>
+            <div class="content active" id="menu6">
+                <div class="row">
+                    <div class="large-6 columns">
+                        <img src="./static/img/pi2.jpg" height="50">
+                    </div>
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                            <div class="large-6 columns">
+                                <p>工作频率 (MHz)</p>
+                            </div>
+                            <div class="large-6 columns">
+                                <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                            </div>
+                        </div>
+
+                        <div class="row collapse">
+                            <div class="large-6 columns">
+                               
+                            </div>
+                            <div class="large-6 columns">
+                                <button type="button" class="button tiny">开始</button>
+                                <button type="button" class="button tiny">帮助</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <p>设置元件参数</p>
+                            <form _lpchecked="1">
+                                <div class="row collapse">
+                                    <div class="large-2 columns">
+                                        <p>L(uH)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+    								
+                                    <div class="large-2 columns">
+                                        <p>C3(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                    
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-2 columns">
+                                        <p>C1(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-2 columns">
+                                        <p>C2(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <hr>
+<form>
+
+                                <button type="button" class="button tiny">计算可匹配的负载与 C3 并联后的阻抗范围</button>
+                                <div class="row collapse">
+                                    <div class="large-2 columns">
+                                        <p>实部 (Ω)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-2 columns">
+                                        <p>虚部</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                </div>
+                            </form>
+                    </div>
+                    <div class="large-6 columns">
+    <div class="row collapse">
+                                    <div class="large-8 columns">
+                                        <p>再次设置 C3 和 L，重新计算</p>
+                                    </div>
+        <div class="large-4 columns">
+                                        <button type="button" class="button tiny">确定 C3 和 L</button>
+                                    </div>
+    </div>  
+                        
+                            <form>
+                                <div class="row collapse">
+                                    <div class="large-2 columns">
+                                        <p>L(uH)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                    <div class="large-2 columns">
+       <p>C3(pF)                                 
+                                    </p></div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                </div>
+                                
+                                
+
+                            </form>
+<hr>
+<form>
+    <div class="row collapse">
+    <div class="large-4 columns">
+                                         <p>设置负载值</p>
+                                    </div>
+    <div class="large-8 columns">
+                                        <button type="button" class="button tiny">转换成和 C3 并联后的阻抗</button>
+                                    </div>
+   
+                                    <div class="large-2 columns">
+                                        <p>Z(Ω)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+    								<div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>+j</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+
+
+                                </div></form>
+                            
+                            <hr>
+<form _lpchecked="1">
+
+                                
+                                <div class="row collapse">
+                                    <div class="large-2 columns">
+                                        <p>C1(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div><div class="large-2 columns">
+                                        <p>C2(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="row collapse">
+                                    <div class="large-5 columns">
+                                       <button type="button" class="button tiny">计算参考电容</button>
+                                    </div>
+                                    
+                                    <div class="large-4 columns">
+                                        <button type="button" class="button tiny">元件承压值</button>
+                                    </div>
+                                    <div class="large-3 columns">
+                                        <button type="button" class="button tiny">作图</button>
+                                    </div>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
