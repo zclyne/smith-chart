@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
 
     <meta charset="utf-8">
@@ -138,199 +139,197 @@
 
 
 <body>
-<nav class="top-bar" data-topbar>
-    <ul class="title-area">
-        <li class="name">
-            <h1><a href="#">Smith Chart</a></h1>
-        </li>
-        <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。
+    <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="#">Smith Chart</a></h1>
+            </li>
+            <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。
           如果需要只显示图片，可以删除 "Menu" 文本 -->
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-    </ul>
-
-    <section class="top-bar-section">
-        <ul class="right tabs" data-tab="">
-            <li class="tab-title active"><a href="#home">圆图</a></li>
-            <li class="tab-title"><a href="#menu1">LⅠ型</a></li>
-            <li class="tab-title"><a href="#menu2">LⅡ型</a></li>
-            <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
-            <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
-            <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
-            <li class="tab-title"><a href="#menu6">πⅡ型</a></li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
-    </section>
-</nav>
 
-<div class="large-6 columns">
-    <canvas id="paperSurface" style="width:100%">
-    </canvas>
-</div>
+        <section class="top-bar-section">
+            <ul class="right tabs" data-tab="">
+                <li class="tab-title active"><a href="#home">圆图</a></li>
+                <li class="tab-title"><a href="#menu1">LⅠ型</a></li>
+                <li class="tab-title"><a href="#menu2">LⅡ型</a></li>
+                <li class="tab-title"><a href="#menu3">TⅠ型</a></li>
+                <li class="tab-title"><a href="#menu3">TⅡ型</a></li>
+                <li class="tab-title"><a href="#menu3">πⅠ型</a></li>
+                <li class="tab-title"><a href="#menu6">πⅡ型</a></li>
+            </ul>
+        </section>
+    </nav>
 
-<div class="large-6 columns">
-    <div class="panel">
-        <div class="tabs-content">
-            <div class="content active" id="home">
+    <div class="large-6 columns">
+        <canvas id="paperSurface" style="width:100%">
+        </canvas>
+    </div>
 
-                <form>
-                    <div class="row">
-                        <div class="large-4 columns">
-                            <p>Gamma</p>
-                        </div>
-                        <div class="large-4 columns">
-                            <div class="row collapse">
-                                <div class="large-10 columns">
-                                    <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"/>
+    <div class="large-6 columns">
+        <div class="panel">
+            <div class="tabs-content">
+                <div class="content active" id="home">
+
+                    <form>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <p>Gamma</p>
+                            </div>
+                            <div class="large-4 columns">
+                                <div class="row collapse">
+                                    <div class="large-10 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
+                                    </div>
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="postfix">+</span>
+                                    </div>
                                 </div>
-                                <div class="large-2 columns selection-values-markup">
-                                    <span class="postfix">+</span>
+                            </div>
+                            <div class="large-4 columns">
+                                <div class="row collapse">
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>j</strong></span>
+                                    </div>
+                                    <div class="large-10 columns">
+                                        <input class="selection-values" id="text-gamma-i" type="text" placeholder="----" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="large-4 columns">
-                            <div class="row collapse">
-                                <div class="large-2 columns selection-values-markup">
-                                    <span class="prefix"><strong>j</strong></span>
-                                </div>
-                                <div class="large-10 columns">
-                                    <input class="selection-values" id="text-gamma-i" type="text" placeholder="----"/>
-                                </div>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <p>VSWR</p>
+                            </div>
+                            <div class="large-4 columns">
+                                <input class="selection-values" id="text-rho" type="text" placeholder="----" />
+                            </div>
+                            <div class="large-4 columns">
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="large-4 columns">
-                            <p>VSWR</p>
-                        </div>
-                        <div class="large-4 columns">
-                            <input class="selection-values" id="text-rho" type="text" placeholder="----"/>
-                        </div>
-                        <div class="large-4 columns">
-                        </div>
-                    </div>
-                </form>
-                <hr/>
-                <form>
-                    <div class="row">
-                        <div class="large-4 columns">
-                            <p>Impedance</p>
-                        </div>
-                        <div class="large-4 columns">
-                            <div class="row collapse">
-                                <div class="large-10 columns">
-                                    <input class="selection-values" id="text-z-r" type="text" placeholder="----"/>
-                                </div>
-                                <div class="large-2 columns selection-values-markup">
-                                    <span class="postfix">+</span>
+                    </form>
+                    <hr />
+                    <form>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <p>Impedance</p>
+                            </div>
+                            <div class="large-4 columns">
+                                <div class="row collapse">
+                                    <div class="large-10 columns">
+                                        <input class="selection-values" id="text-z-r" type="text" placeholder="----" />
+                                    </div>
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="postfix">+</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="large-4 columns">
-                            <div class="row collapse">
-                                <div class="large-2 columns selection-values-markup">
-                                    <span class="prefix"><strong>j</strong></span>
+                            <div class="large-4 columns">
+                                <div class="row collapse">
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>j</strong></span>
+                                    </div>
+                                    <div class="large-10 columns">
+                                        <input class="selection-values" id="text-z-i" type="text" placeholder="----" />
+                                    </div>
                                 </div>
-                                <div class="large-10 columns">
-                                    <input class="selection-values" id="text-z-i" type="text" placeholder="----"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-4 columns">
-                            <p>Admittance</p>
-                        </div>
-                        <div class="large-4 columns">
-                            <div class="row collapse">
-                                <div class="large-10 columns">
-                                    <input class="selection-values" id="text-y-r" type="text" placeholder="----"/>
-                                </div>
-                                <div class="large-2 columns selection-values-markup">
-                                    <span class="postfix">+</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="large-4 columns">
-                            <div class="row collapse">
-                                <div class="large-2 columns selection-values-markup">
-                                    <span class="prefix"><strong>j</strong></span>
-                                </div>
-                                <div class="large-10 columns">
-                                    <input class="selection-values" id="text-y-i" type="text" placeholder="----"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-                <hr/>
-                <form>
-                    <div class="row">
-                        <div class="large-4 columns">
-                            <p>dmax</p>
-                        </div>
-                        <div class="large-4 columns">
-                            <input class="selection-values" id="text-dmax" type="text" placeholder="----"/>
-
-                        </div>
-                        <div class="large-4 columns">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-4 columns">
-                            <p>dmin</p>
-                        </div>
-                        <div class="large-4 columns">
-                            <input class="selection-values" id="text-dmin" type="text" placeholder="----"/>
-
-                        </div>
-                        <div class="large-4 columns">
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>
-            <div class="content" id="menu1">
-                <div class="row">
-                    <div class="large-6 columns">
-                        <img src="static/img/circuit_L1.png" height="50"/>
-                    </div>
-                    <div class="large-6 columns">
-                        <div class="row collapse">
-                            <div class="large-6 columns">
-                                <p>工作频率(MHz)</p>
-                            </div>
-                            <div class="large-6 columns">
-                                <input class="selection-values" id="text-gamma-r" type="text"
-                                       placeholder="----"/>
                             </div>
                         </div>
 
-                        <div class="row collapse">
-                            <div class="large-6 columns">
-                                <button type="button" class="button tiny">开始</button>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <p>Admittance</p>
                             </div>
-                            <div class="large-6 columns">
-                                <button type="button" class="button tiny">帮助</button>
+                            <div class="large-4 columns">
+                                <div class="row collapse">
+                                    <div class="large-10 columns">
+                                        <input class="selection-values" id="text-y-r" type="text" placeholder="----" />
+                                    </div>
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="postfix">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="large-4 columns">
+                                <div class="row collapse">
+                                    <div class="large-2 columns selection-values-markup">
+                                        <span class="prefix"><strong>j</strong></span>
+                                    </div>
+                                    <div class="large-10 columns">
+                                        <input class="selection-values" id="text-y-i" type="text" placeholder="----" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                    </form>
+                    <hr />
+                    <form>
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <p>dmax</p>
+                            </div>
+                            <div class="large-4 columns">
+                                <input class="selection-values" id="text-dmax" type="text" placeholder="----" />
+
+                            </div>
+                            <div class="large-4 columns">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="large-4 columns">
+                                <p>dmin</p>
+                            </div>
+                            <div class="large-4 columns">
+                                <input class="selection-values" id="text-dmin" type="text" placeholder="----" />
+
+                            </div>
+                            <div class="large-4 columns">
+                            </div>
+                        </div>
+
+                    </form>
 
                 </div>
-                <hr/>
-                <div class="row">
-                    <div class="large-6 columns">
-                        <p>设置元件参数</p>
+                <div class="content" id="menu1">
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <img src="static/img/circuit_L1.png" height="50" />
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="row collapse">
+                                <div class="large-6 columns">
+                                    <p>工作频率(MHz)</p>
+                                </div>
+                                <div class="large-6 columns">
+                                    <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
+                                </div>
+                            </div>
+
+                            <div class="row collapse">
+                                <div class="large-6 columns">
+                                    <button type="button" class="button tiny">开始</button>
+                                </div>
+                                <div class="large-6 columns">
+                                    <button type="button" class="button tiny">帮助</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <p>设置元件参数</p>
                             <form>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
                                         <p>L(uH)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-5 columns">
                                     </div>
@@ -340,15 +339,13 @@
                                         <p>C1(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                 </div>
                                 <div class="row collapse">
@@ -356,19 +353,17 @@
                                         <p>C2(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                 </div>
                             </form>
-                            <hr/>
+                            <hr />
                             <form>
 
                                 <button type="button" class="button tiny">计算可匹配负载阻抗范围</button>
@@ -377,15 +372,13 @@
                                         <p>实部</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                 </div>
                                 <div class="row collapse">
@@ -393,36 +386,32 @@
                                         <p>虚部</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                 </div>
                             </form>
-                    </div>
-                    <div class="large-6 columns">
-                        <p>设置负载和电感值</p>
+                        </div>
+                        <div class="large-6 columns">
+                            <p>设置负载和电感值</p>
                             <form>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
                                         <p>Z(Ω)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>+j</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                 </div>
                                 <div class="row collapse">
@@ -430,15 +419,14 @@
                                         <p>L(uH)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-5 columns">
                                     </div>
                                 </div>
 
                             </form>
-                            <hr/>
+                            <hr />
                             <form>
 
                                 <button type="button" class="button tiny">计算参考电容值</button>
@@ -447,8 +435,7 @@
                                         <p>C1(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-5 columns">
                                     </div>
@@ -458,8 +445,7 @@
                                         <p>C2(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
-                                               placeholder="----"/>
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" />
                                     </div>
                                     <div class="large-5 columns">
                                     </div>
@@ -473,78 +459,83 @@
                                     </div>
                                 </div>
                             </form>
-                    </div>
-                </div>
-
-            </div>
-            <div class="content" id="menu2">
-                <h3>菜单 2</h3>
-                <p>一些文本内容 2</p>
-            </div>
-            <div class="content" id="menu3">
-                <h3>菜单 3</h3>
-                <p>一些文本内容 3</p>
-            </div>
-            <div class="content" id="menu6">
-                <div class="row">
-                    <div class="large-6 columns">
-                        <img src="./static/img/pi2.jpg" height="50">
-                    </div>
-                    <div class="large-6 columns">
-                        <div class="row collapse">
-                            <div class="large-6 columns">
-                                <p>工作频率 (MHz)</p>
-                            </div>
-                            <div class="large-6 columns">
-                                <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
-                            </div>
-                        </div>
-
-                        <div class="row collapse">
-                            <div class="large-6 columns">
-                               
-                            </div>
-                            <div class="large-6 columns">
-                                <button type="button" class="button tiny">开始</button>
-                                <button type="button" class="button tiny">帮助</button>
-                            </div>
                         </div>
                     </div>
 
                 </div>
-                <hr>
-                <div class="row">
-                    <div class="large-6 columns">
-                        <p>设置元件参数</p>
-                            <form _lpchecked="1">
+                <div class="content" id="menu2">
+                    <h3>菜单 2</h3>
+                    <p>一些文本内容 2</p>
+                </div>
+                <div class="content" id="menu3">
+                    <h3>菜单 3</h3>
+                    <p>一些文本内容 3</p>
+                </div>
+                <div class="content" id="menu6">
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <img src="static/img/pi2.jpg" height="50" />
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="row collapse">
+                                <div class="large-6 columns">
+                                    <p>工作频率 (MHz)</p>
+                                </div>
+                                <div class="large-6 columns">
+                                    <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                        style="color: lightgray;">
+                                </div>
+                            </div>
+
+                            <div class="row collapse">
+                                <div class="large-6 columns">
+
+                                </div>
+                                <div class="large-6 columns">
+                                    <button type="button" class="button tiny">开始</button>
+                                    <button type="button" class="button tiny">帮助</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <p>设置元件参数</p>
+                            <form>
                                 <div class="row collapse">
                                     <div class="large-2 columns">
                                         <p>L(uH)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
-    								
+
                                     <div class="large-2 columns">
                                         <p>C3(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
-                                    
+
                                 </div>
                                 <div class="row collapse">
                                     <div class="large-2 columns">
                                         <p>C1(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                     <div class="large-2 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                 </div>
                                 <div class="row collapse">
@@ -552,19 +543,21 @@
                                         <p>C2(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                     <div class="large-2 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                 </div>
                             </form>
-                            
+
                             <hr>
-<form>
+                            <form>
 
                                 <button type="button" class="button tiny">计算可匹配的负载与 C3 并联后的阻抗范围</button>
                                 <div class="row collapse">
@@ -572,13 +565,15 @@
                                         <p>实部 (Ω)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                     <div class="large-2 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                 </div>
                                 <div class="row collapse">
@@ -586,96 +581,107 @@
                                         <p>虚部</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                     <div class="large-2 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                 </div>
                             </form>
-                    </div>
-                    <div class="large-6 columns">
-    <div class="row collapse">
-                                    <div class="large-8 columns">
-                                        <p>再次设置 C3 和 L，重新计算</p>
-                                    </div>
-        <div class="large-4 columns">
-                                        <button type="button" class="button tiny">确定 C3 和 L</button>
-                                    </div>
-    </div>  
-                        
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="row collapse">
+                                <div class="large-8 columns">
+                                    <p>再次设置 C3 和 L，重新计算</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <button type="button" class="button tiny">确定 C3 和 L</button>
+                                </div>
+                            </div>
+
                             <form>
                                 <div class="row collapse">
                                     <div class="large-2 columns">
                                         <p>L(uH)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                     <div class="large-2 columns">
-       <p>C3(pF)                                 
-                                    </p></div>
+                                        <p>C3(pF)
+                                        </p>
+                                    </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
                                 </div>
-                                
-                                
+
+
 
                             </form>
-<hr>
-<form>
-    <div class="row collapse">
-    <div class="large-4 columns">
-                                         <p>设置负载值</p>
+                            <hr>
+                            <form>
+                                <div class="row collapse">
+                                    <div class="large-4 columns">
+                                        <p>设置负载值</p>
                                     </div>
-    <div class="large-8 columns">
+                                    <div class="large-8 columns">
                                         <button type="button" class="button tiny">转换成和 C3 并联后的阻抗</button>
                                     </div>
-   
+
                                     <div class="large-2 columns">
                                         <p>Z(Ω)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
-    								<div class="large-2 columns selection-values-markup">
+                                    <div class="large-2 columns selection-values-markup">
                                         <span class="prefix"><strong>+j</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
 
 
-                                </div></form>
-                            
-                            <hr>
-<form _lpchecked="1">
+                                </div>
+                            </form>
 
-                                
+                            <hr>
+                            <form _lpchecked="1">
+
+
                                 <div class="row collapse">
                                     <div class="large-2 columns">
                                         <p>C1(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
-                                    </div><div class="large-2 columns">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
+                                    </div>
+                                    <div class="large-2 columns">
                                         <p>C2(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----" style="color: lightgray;">
+                                        <input class="selection-values" id="text-gamma-r" type="text" placeholder="----"
+                                            style="color: lightgray;">
                                     </div>
-                                    
+
                                 </div>
-                                
+
                                 <div class="row collapse">
                                     <div class="large-5 columns">
-                                       <button type="button" class="button tiny">计算参考电容</button>
+                                        <button type="button" class="button tiny">计算参考电容</button>
                                     </div>
-                                    
+
                                     <div class="large-4 columns">
                                         <button type="button" class="button tiny">元件承压值</button>
                                     </div>
@@ -684,22 +690,23 @@
                                     </div>
                                 </div>
                             </form>
+                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
+
     </div>
 
-</div>
 
+    <script src="static/foundation-5.5.3/js/foundation.min.js"></script>
 
-<script src="static/foundation-5.5.3/js/foundation.min.js"></script>
-
-<script>
-    $(document).foundation();
-</script>
+    <script>
+        $(document).foundation();
+    </script>
 
 
 </body>
+
 </html>
