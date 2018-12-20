@@ -55,3 +55,7 @@ Complex.prototype.inv = function() {
 Complex.prototype.copy = function() {
 	return new Complex(this.r, this.i)
 };
+
+//Complex.prototype.div =function(c){
+//	return new Complex((this.r*c.r + this.i * c.i)/(c.r*c.r+c.i*c.i),(this.i*c.r-this.r*c.i)/(c.r*c.r+c.i*c.i))
+//};
