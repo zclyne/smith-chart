@@ -174,8 +174,6 @@
         <li class="name">
             <h1><a href="#">Smith Chart</a></h1>
         </li>
-        <!-- 小屏幕上折叠按钮: 去掉 .menu-icon 类，可以去除图标。
-      如果需要只显示图片，可以删除 "Menu" 文本 -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
@@ -547,20 +545,14 @@
                             <div class="large-6 columns">
                                 <input class="selection-values" id="pi2-work-freq" type="text" placeholder="----"
                                        style="color: lightgray;">
-
-
                             </div>
                         </div>
 
                         <div class="row collapse">
                             <div class="large-6 columns">
-
+                                <button type="button" class="button tiny" id="pi2-start" onclick="click_start()">开始</button>
                             </div>
                             <div class="large-6 columns">
-                                <button type="button" class="button tiny" id="pi2-start" onclick="click_start()">
-                                    开始
-                                </button>
-
                                 <button type="button" class="button tiny" id="pi2-help">帮助</button>
                             </div>
                         </div>

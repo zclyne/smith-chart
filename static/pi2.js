@@ -116,6 +116,7 @@ function calculateRRange(l, c3) {
     var d = Math.floor(c1max - c1min);
     var complex_array = new Array();
 
+    complex_array[0] = new Complex(0,0);
     var temp = 0;
     for (var ci = c1min; ci < c1max; ci++) {
         yloadg.i = 2 * pi * f * ci / 1000000000000;
