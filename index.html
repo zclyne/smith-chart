@@ -93,7 +93,8 @@
 
                 updatePanel()
 
-            })
+            });
+
 
         });
 
@@ -160,6 +161,19 @@
         </ul>
     </section>
 </nav>
+
+
+
+<div id="l2-modal" class="reveal-modal" data-reveal>
+  <h3>帮助 > L I 型电路匹配 </h3>
+  <p>该L型匹配毛路匹配电路的工作频率是在1～133MHz，是在匹配范至包括阻抗实部1～49Ω，
+      虚部-1001～1000Ω的条件下得出。是无法匹配实部大于等于50Ω的负载，如果负载实部
+      超出这一范围，请选择其他匹配网络。建议参照以下数搌确定初始输入值，并按照实际
+      设计要求调整参数。如输入不台理可能导致错误的结果！注意匹配范围是以阻抗形式给出
+  </p>
+  <p></p>
+  <a class="close-reveal-modal">&times;</a>
+</div>
 
 <div class="large-6 columns">
     <canvas id="paperSurface" style="width:100%">
@@ -293,6 +307,7 @@
 
             </div>
             <div class="content" id="menu1">
+
                 <div class="row">
                     <div class="large-6 columns">
                         <img src="static/img/circuit_L1.png" height="50"/>
@@ -303,17 +318,17 @@
                                 <p>工作频率(MHz)</p>
                             </div>
                             <div class="large-6 columns">
-                                <input class="selection-values" id="text-gamma-r" type="text"
+                                <input class="selection-values" id="l1-freq" type="text"
                                        placeholder="----"/>
                             </div>
                         </div>
 
                         <div class="row collapse">
                             <div class="large-6 columns">
-                                <button type="button" class="button tiny">开始</button>
+                                <button type="button" class="button tiny" id="l1-start">开始</button>
                             </div>
                             <div class="large-6 columns">
-                                <button type="button" class="button tiny">帮助</button>
+                                <button type="button" class="button tiny" data-reveal-id="l2-modal">帮助</button>
                             </div>
                         </div>
                     </div>
@@ -329,7 +344,7 @@
                                         <p>L(uH)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l1-l" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-5 columns">
@@ -340,14 +355,14 @@
                                         <p>C1(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l1-s2-c11" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l1-s2-c12" type="text"
                                                placeholder="----"/>
                                     </div>
                                 </div>
@@ -356,14 +371,14 @@
                                         <p>C2(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l1-s2-c21" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l1-s2-c22" type="text"
                                                placeholder="----"/>
                                     </div>
                                 </div>
@@ -371,20 +386,20 @@
                             <hr/>
                             <form>
 
-                                <button type="button" class="button tiny">计算可匹配负载阻抗范围</button>
+                                <button type="button" class="button tiny" id="l2-s3-comp">计算可匹配负载阻抗范围</button>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
                                         <p>实部</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s3-real1" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s3-real2" type="text"
                                                placeholder="----"/>
                                     </div>
                                 </div>
@@ -393,14 +408,14 @@
                                         <p>虚部</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s3-imag1" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>～</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s3-imag2" type="text"
                                                placeholder="----"/>
                                     </div>
                                 </div>
@@ -414,14 +429,14 @@
                                         <p>Z(Ω)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s4-zr" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-1 columns selection-values-markup">
                                         <span class="prefix"><strong>+j</strong></span>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s4-zi" type="text"
                                                placeholder="----"/>
                                     </div>
                                 </div>
@@ -430,7 +445,7 @@
                                         <p>L(uH)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s4-l" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-5 columns">
@@ -441,13 +456,13 @@
                             <hr/>
                             <form>
 
-                                <button type="button" class="button tiny">计算参考电容值</button>
+                                <button type="button" class="button tiny" id="l2-s5-comp">计算参考电容值</button>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
                                         <p>C1(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s5-c1" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-5 columns">
@@ -458,7 +473,7 @@
                                         <p>C2(pF)</p>
                                     </div>
                                     <div class="large-4 columns">
-                                        <input class="selection-values" id="text-gamma-r" type="text"
+                                        <input class="selection-values" id="l2-s5-c2" type="text"
                                                placeholder="----"/>
                                     </div>
                                     <div class="large-5 columns">
@@ -466,10 +481,10 @@
                                 </div>
                                 <div class="row collapse">
                                     <div class="large-6 columns">
-                                        <button type="button" class="button tiny">元件承压值</button>
+                                        <button type="button" class="button tiny" id="l2-s5-volt">元件承压值</button>
                                     </div>
                                     <div class="large-6 columns">
-                                        <button type="button" class="button tiny">在圆图显示</button>
+                                        <button type="button" class="button tiny" id="l2-s5-chart">在圆图显示</button>
                                     </div>
                                 </div>
                             </form>
