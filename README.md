@@ -17,10 +17,9 @@ You can also run `python -m http.server`, and the page is served at `http://loca
 
 ## Process
 
-1. 基本完成pi2型
-2. 因为在 Complex.js 中没有复数除法，所以在 index.html 的 head 部分加了复数的除法函数，具体参见
-3. 阻抗换算按钮不做了😄
+2018-12-31 已提交0.6beta
+完成圆图、L1，L2，T1，pi1，pi2型匹配电路大部分设计
 
 ## TODO 
-- 在f=5的时候会有报错
-- 元件承压值
+- 计算原件承压值，在圆图显示
+- 修复数值误差
