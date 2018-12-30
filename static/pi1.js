@@ -50,7 +50,7 @@ function pi1_click_start() {
     var l = document.getElementById("pi1-l").value = l;
     var w = 2 * pi * f * 1e6;
     var c3 = 11000 / f / 1e12;
-    document.getElementById("pi1-c3").value = c3 * 1000000000000;
+    document.getElementById("pi1-c3").value = c3 * 1e12;
     var ll = l / 1000000.0;
     var Gmin = 0.0006,
         Gmax = (0.02 ^ 2 + Math.pow(w * c3,2)) / 0.02,
@@ -60,13 +60,13 @@ function pi1_click_start() {
         consta2 = w * c3 / (0.02 * 0.02 + Math.pow(w * c3,2)),
         consta3 = (1 / Bmax - Math.sqrt((1 / Bmax) ^ 2 - 4 * consta1 * consta1)) / 2,
         consta4 = Math.sqrt(consta1 / Gmin - consta1 * consta1),
-        c2max = 1 / (100 - consta4 - consta2) / w * 10e11,
-        c2min = 1 / (200 + consta4 - consta2) / w * 10e11;
+        c2max = 1 / (100 - consta4 - consta2) / w * 1e12,
+        c2min = 1 / (200 + consta4 - consta2) / w * 1e12;
     document.getElementById("pi1-c2-upper").value = c2max;
     document.getElementById("pi1-c2-lower").value = c2min;
     //var d1 = Math.floor(rmax - rmin),
     //    d2 = Math.floor((xmax - xmin) / 5);
-    var d = Math.floor(c2max-c2min)*100;
+    var d = Math.floor(c2max-c2min)/0.01;
 
     var c11 = new Array(d);
     var c2 = c2min,
@@ -74,7 +74,7 @@ function pi1_click_start() {
 
     for (var i = 0; i < d; ++i) {
         c2 = c2 + i*c2d;
-        c11[i] = (w * ll - 1 / (w * c2 / 10e12) - consta2) / (consta1 * consta1 + Math.pow((w * ll - 1 / (w * c2 / 10e12) - consta2),2));
+        c11[i] = (w * ll - 1 / (w * c2 / 1e12) - consta2) / (consta1 * consta1 + Math.pow((w * ll - 1 / (w * c2 / 1e12) - consta2),2));
     }
     var c11min = c11[0],
         c11max = c11[0];
@@ -83,8 +83,8 @@ function pi1_click_start() {
         if (c11max < c11[i]) c11max = c11[i];
     }
 
-    var c1max = (-Bmin + c11min) / w * 1000000000000;
-    var c1min = (-Bmax + c11max) / w * 1000000000000;
+    var c1max = (-Bmin + c11min) / w * 1e12;
+    var c1min = (-Bmax + c11max) / w * 1e12;
     document.getElementById("pi1-c1-lower").value = c1min;
     document.getElementById("pi1-c1-upper").value = c1max;
 }
@@ -92,40 +92,31 @@ function pi1_click_start() {
 function pi1_calculateRRange(l, c3) {
     var pi = 3.1415926535;
     //var l=document.getElementById("pi2-l").value/1000000.0;
-    var f = document.getElementById("pi1-work-freq").value * 1000000.0;
-    var L = document.getElementById("pi1-work-freq").value / 1000000.0;
-    var c1min = document.getElementById("pi1-c1-lower").value;
-    var c1max = document.getElementById("pi1-c1-upper").value;
-    var c2min = document.getElementById("pi1-c2-lower").value;
-    var c2max = document.getElementById("pi1-c2-upper").value;
+    var f = document.getElementById("pi1-work-freq").value * 1e6;
+    var L = document.getElementById("pi1-l").value / 1e6;
+    var c1min = document.getElementById("pi1-c1-lower").value * 1.0;
+    var c1max = document.getElementById("pi1-c1-upper").value * 1.0;
+    var c2min = document.getElementById("pi1-c2-lower").value * 1.0;
+    var c2max = document.getElementById("pi1-c2-upper").value * 1.0;
     var w = 2 * pi * f;
     //var c3=0.01/w;
-    var c33 = document.getElementById("pi1-c3").value;
-    var c3 = c33/1000000000000;
+    var c3 = document.getElementById("pi1-c3").value / 1e12;
     var a = new Complex(1, 0);
     var yloadg = new Complex(0.02, 0);
     var Yc3 = new Complex(0.02,w*c3);
     var Zc3 = complexDivide(a,Yc3);
-    var Zc2 = Zc3;
+    var Zc2 = new Complex(Zc3.r,0);
     //var zloadg = new Complex(0, 0);
     var d = Math.floor(c1max - c1min) * 10;
     var complex_array = new Array(d);
-
-    var temp = 0;
-    for (var c2i = c2min; c2i < c2max; c2i+=0.1) {
-        Zc2.i = Zc3.i + w * L - 1 / (w * c2 / 1e12);
-        complex_array[temp] = complexDivide(a, Zc2);
-        temp++;
-    }
 
     complex_array[0] = new Complex(0,0);
     var ci = c2min;
     for (var i = 0; i < d; i++) {
         Zc2.i = Zc3.i + w * L - 1 / (w * ci / 1e12);
         complex_array[i] = complexDivide(a, Zc2);
-        ci+=0.1;
+        ci=ci+0.1;
     }
-
 
     var rmax = complex_array[0].r;
     var rmin = complex_array[0].r;
@@ -143,39 +134,24 @@ function pi1_calculateRRange(l, c3) {
     document.getElementById("pi1-r-real-upper").value = rmax;
 
 
-    var xpos = new Array(d);
-    var xneg = new Array(d);
+    var xpos = new Array();
+    var xneg = new Array();
     for (var i = 0; i < d; i++) {
-        xpos[i] = complex_array[i].i + 2 * pi * f * c1min;
-        //xneg[i] = complex_array[i].i + 2 * pi * f * l - 1 / (c2max * 2 * pi * f / 1000000000000);
+        xpos[i] = complex_array[i].i + 2 * pi * f * c1min / 1e12;
+        xneg[i] = complex_array[i].i + 2 * pi * f * c1max / 1e12;
     }
-    var xpositive = xpos[0];
+
+    var xmax = xpos[0];
+    var xmin = xneg[0];
     for (var i = 0; i < d; i++) {
-        if(xpositive > xpos[i+1]){
-            xpositive = xpos[i+1]
-        }
-
-        //xpos[i] = complex_array[i].i + 2 * pi * f * c1min;
-        //xneg[i] = complex_array[i].i + 2 * pi * f * l - 1 / (c2max * 2 * pi * f / 1000000000000);
-    }//minmum
-
-
-    for (var i = 0; i < d; i++) {
-        xneg[i] = complex_array[i].i + 2 * pi * f * c1max;
-        //xneg[i] = complex_array[i].i + 2 * pi * f * l - 1 / (c2max * 2 * pi * f / 1000000000000);
+        if (xmax > xpos[i]) xmax = xpos[i];
+        if (xmin < xneg[i]) xmin = xneg[i];
     }
-    var xnegtive = xneg[0];
-    for (var i = 0; i < d; i++) {
-        if(xnegtive < xneg[i+1]){
-            xnegtive = xneg[i+1]
-        }
+    xmax = 0 - xmax;
+    xmin = 0 - xmin;
+    document.getElementById("pi1-r-imag-lower").value = xmin;
+    document.getElementById("pi1-r-imag-upper").value = xmax;
 
-        //xpos[i] = complex_array[i].i + 2 * pi * f * c1min;
-        //xneg[i] = complex_array[i].i + 2 * pi * f * l - 1 / (c2max * 2 * pi * f / 1000000000000);
-    }//maxmum
-
-    document.getElementById("pi1-r-imag-lower").value = -xpositive;
-    document.getElementById("pi1-r-imag-upper").value = -xnegtive;
 
 }
 
@@ -193,38 +169,27 @@ function pi1_recalcu() {
 
 function pi1_calculateC() {
     var pi = 3.1415926535;
-
-    var c3 = document.getElementById("pi1-c3-reset").value / 1000000000000;
-    var l = document.getElementById("pi1-l-reset").value;
-    var L = l/1000000;
-    var f = document.getElementById("pi1-work-freq").value * 1000000;
+    var f = document.getElementById("pi1-work-freq").value * 1e6;
     var w = 2 * pi * f;
-    var zzr = document.getElementById("pi1-z-real").value;
-    var zzi = document.getElementById("pi1-z-imag").value;
-    var zload = new Complex();
-    zload.r = zzr;
-    zload.i = zzi;
+    var L = document.getElementById("pi1-l-reset").value / 1e6;
+    var c3 = document.getElementById("pi1-c3-reset").value / 1e12;
+
+    var zzr = document.getElementById("pi1-z-real").value * 1.0;
+    var zzi = document.getElementById("pi1-z-imag").value * 1.0;
+    var zload = new Complex(zzr,zzi);
     var a = new Complex(1, 0);
     var yload = complexDivide(a, zload);
-    var yload1 = new Complex();
-    yload1.r = yload.r;
-    yload1.i = yload.i + w * c3;
-    var zload1 = complexDivide(a, yload1);
-    var Yc3 = new Complex(0.02,-2*c3);
+
+    var Yc3 = new Complex(0.02,-w*c3);
     var Zc3 = complexDivide(a,Yc3);
-    var Zc2 = Zc3;
+    var Zc2 = new Complex(Zc3.r,0);
     Zc2.i = -Math.sqrt(Zc2.r/yload.r-Zc2.r*Zc2.r);
     var Yc2 = complexDivide(a,Zc2);
 
-    var zloadg = new Complex(zload1.r, Math.sqrt(zload1.r * 50 - zload1.r * zload1.r));
-    var yloadg = new Complex(0.02, complexDivide(a, zloadg).i);
-
-    var c1 = (Yc2.i - yload.i) / (2 * pi * f) * 1000000000000;
-    var c2 = 1 / (2 * pi * f * (Zc2.i - Zc3.i + w * L)) * 1e12;
-    
+    var c1 = (Yc2.i - yload.i) / w * 1e12;
+    var c2 = 1 / (w * (Zc2.i - Zc3.i + w * L)) * 1e12;
 
     document.getElementById("pi1-c1-2").value = c1;
     document.getElementById("pi1-c2-2").value = c2;
-
 
 }
