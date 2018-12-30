@@ -212,6 +212,7 @@
     </section>
 </nav>
 
+
 <div id="l1-modal" class="reveal-modal" data-reveal>
     <h3>L I 型电路匹配 </h3>
     <p>该L型匹配电路匹配电路的工作频率是在1~133MHz。是在匹配范围包括阻抗实部1~49Ω,
@@ -260,6 +261,266 @@
         </table>
     </div>
     <p>提示: L的值尽量取小，可以增大c2的取值范围。同一匹配状态下L和C2二者增大其一可使得另一减小。</p>
+    <a class="close-reveal-modal">&times;</a>
+</div>
+
+<div id="l2-modal" class="reveal-modal" data-reveal>
+    <h3>L II 型电路匹配 </h3>
+    <p>L左型匹配电路无法匹配实部小于50欧姆的负载。
+        而且并非所有实部大于50欧姆的负载都能匹配。建议参照以下数据确定初始输入值，
+        并按照实际设计要求调整参数。如输入不合理将可能导致错误的结果！注意匹配范围是以导纳形式给出！！
+    </p>
+    <div class="responsive">
+        <table>
+            <thead>
+            <tr>
+                <th>工作频率(MHz)</th>
+                <th>2~2.5</th>
+                <th>2.5~3</th>
+                <th>3~3.5</th>
+                <th>3.5~4</th>
+                <th>4~5</th>
+                <th>5~6</th>
+                <th>6~7</th>
+                <th>7~8</th>
+                <th>8~10</th>
+                <th>10~12</th>
+                <th>12~15</th>
+                <th>15~18</th>
+                <th>18~20</th>
+                <th>20~25</th>
+                <th>25~30</th>
+                <th>30~35</th>
+                <th>35~40</th>
+                <th>40~50</th>
+                <th>50~60</th>
+                <th>60~70</th>
+                <th>70~80</th>
+                <th>80~90</th>
+                <th>90~95</th>
+                <th>95~100</th>
+                <th>100~110</th>
+                <th>110~120</th>
+                <th>120~133</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>L取值(uH)</td>
+                <td> 23.9~25.4</td>
+                <td> 19~21.2</td>
+                <td> 16~18.2</td>
+                <td> 13.6~16</td>
+                <td> 11.9~12.7</td>
+                <td> 9.6~10.6</td>
+                <td> 8~9</td>
+                <td> 6.8~8</td>
+                <td> 6~6.3</td>
+                <td> 4.8~5.3</td>
+                <td> 4~4.2</td>
+                <td> 3.2~3.5</td>
+                <td> 2.7~3.2</td>
+                <td> 2.4~2.5</td>
+                <td> 1.9~2.1</td>
+                <td> 1.6~1.8</td>
+                <td> 1.4~1.6</td>
+                <td> 1.2~1.27</td>
+                <td> 0.96~1.06</td>
+                <td> 0.8~0.9</td>
+                <td> 0.69~0.8</td>
+                <td> 0.6~0.7</td>
+                <td> 0.53~0.62</td>
+                <td> 0.5</td>
+                <td> 0.48~0.5</td>
+                <td> 0.43</td>
+                <td> 0.4~0.45</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="close-reveal-modal">&times;</a>
+</div>
+
+<div id="T1-modal" class="reveal-modal" data-reveal>
+    <h3>T I 型电路匹配 </h3>
+    <p>在本程序中T型匹配电路，用来匹配阻抗实部0.1~200，虚部-90.0~1000的负载。
+        但是注意并非所有在这个范围内的负载都能得到匹配。
+        建议参照以下数据确定初始输入值， 并按照实际设计要求调整参数。
+        如输入不合理将可能导致错误的结果！注意匹配范围是以导纳形式给出！！
+    </p>
+    <div class="responsive">
+        <table>
+            <thead>
+            <tr>
+                <th>工作频率(MHz)</th>
+                <th>2~3</th>
+                <th>3~5</th>
+                <th>5~8</th>
+                <th>8~10</th>
+                <th>10~15</th>
+                <th>15~20</th>
+                <th>20~25</th>
+                <th>25~30</th>
+                <th>30~40</th>
+                <th>40~50</th>
+                <th>50~70</th>
+                <th>70~100</th>
+                <th>100~133</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>L取值(uH)</td>
+                <td> 8~9</td>
+                <td> 5~5.8</td>
+                <td> 3.2~3.6</td>
+                <td> 2~2.9</td>
+                <td> 1.6~1.9</td>
+                <td> 1~1.4</td>
+                <td> 0.8~1.1</td>
+                <td> 0.6~0.9</td>
+                <td> 0.5~0.7</td>
+                <td> 0.4~0.6</td>
+                <td> 0.3~0.4</td>
+                <td> 0.2~0.29</td>
+                <td> 0.15~0.22</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>提示: 可以稍微小于L的范围的下限，但是不能超过上限</p>
+    <a class="close-reveal-modal">&times;</a>
+</div>
+
+<div id="pi1-modal" class="reveal-modal" data-reveal>
+    <h3>π I 型电路匹配 </h3>
+    <p>在本程序中π型匹配电路作为L型匹配电路的一个补充，用来匹配实部大于等于50欧姆的负载，
+        但是注意并非实部大于50欧姆的负载都能得到匹配。
+        建议参照以下数据确定初始输入值， 并按照实际设计要求调整参数。
+        如输入不合理将可能导致错误的结果！注意匹配范围是以导纳形式给出！！
+    </p>
+    <div class="responsive">
+        <table>
+            <thead>
+            <tr>
+                <th>工作频率(MHz)</th>
+                <th>2~3</th>
+                <th>3~5</th>
+                <th>5~7</th>
+                <th>7~10</th>
+                <th>10~15</th>
+                <th>15~20</th>
+                <th>20~25</th>
+                <th>25~30</th>
+                <th>30~40</th>
+                <th>40~50</th>
+                <th>50~70</th>
+                <th>70~90</th>
+                <th>90~110</th>
+                <th>110~133</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>L取值(uH)</td>
+                <td> 8~10.6</td>
+                <td> 5.4~6.3</td>
+                <td> 3.2~4.5</td>
+                <td> 2.3~3.1</td>
+                <td> 1.6~2.1</td>
+                <td> 1.1~1.59</td>
+                <td> 0.8~1.27</td>
+                <td> 0.64~1.06</td>
+                <td> 0.53~0.79</td>
+                <td> 0.4~0.63</td>
+                <td> 0.32~0.45</td>
+                <td> 0.23~0.35</td>
+                <td> 0.18~0.28</td>
+                <td> 0.15~0.23</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>提示: 尽量不要改变默认值</p>
+    <a class="close-reveal-modal">&times;</a>
+</div>
+
+<div id="pi2-modal" class="reveal-modal" data-reveal>
+    <h3>π II 型电路匹配 </h3>
+    <p>πⅡ型匹配电路的给出的匹配范围是负载和c3并联之后的值，
+        可以通过调整c3来改变可以匹配的负载的范围。
+        建议参照以下数据确定初始输入值， 并按照实际设计要求调整参数。
+        如输入不合理将可能导致错误的结果！
+    </p>
+    <div class="responsive">
+        <table>
+            <thead>
+            <tr>
+                <th>工作频率(MHz)</th>
+                <th>2~2.5</th>
+                <th>2.5~3</th>
+                <th>3~3.5</th>
+                <th>3.5~4</th>
+                <th>4~5</th>
+                <th>5~6</th>
+                <th>6~7</th>
+                <th>7~8</th>
+                <th>8~10</th>
+                <th>10~12</th>
+                <th>12~15</th>
+                <th>15~18</th>
+                <th>18~20</th>
+                <th>20~25</th>
+                <th>25~30</th>
+                <th>30~35</th>
+                <th>35~40</th>
+                <th>40~50</th>
+                <th>50~60</th>
+                <th>60~70</th>
+                <th>70~80</th>
+                <th>80~90</th>
+                <th>90~95</th>
+                <th>95~100</th>
+                <th>100~110</th>
+                <th>110~120</th>
+                <th>120~133</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>L取值(uH)</td>
+                <td> 23.9~25.4</td>
+                <td> 19~21.2</td>
+                <td> 16~18.2</td>
+                <td> 13.6~16</td>
+                <td> 11.9~12.7</td>
+                <td> 9.6~10.6</td>
+                <td> 8~9</td>
+                <td> 6.8~8</td>
+                <td> 6~6.3</td>
+                <td> 4.8~5.3</td>
+                <td> 4~4.2</td>
+                <td> 3.2~3.5</td>
+                <td> 2.7~3.2</td>
+                <td> 2.4~2.5</td>
+                <td> 1.9~2.1</td>
+                <td> 1.6~1.8</td>
+                <td> 1.4~1.6</td>
+                <td> 1.2~1.27</td>
+                <td> 0.96~1.06</td>
+                <td> 0.8~0.9</td>
+                <td> 0.69~0.8</td>
+                <td> 0.6~0.7</td>
+                <td> 0.53~0.62</td>
+                <td> 0.5</td>
+                <td> 0.48~0.5</td>
+                <td> 0.43</td>
+                <td> 0.4~0.45</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>提示: 匹配范围是负载和c3并联后的范围，不是负载范围</p>
     <a class="close-reveal-modal">&times;</a>
 </div>
 
@@ -611,7 +872,8 @@
                                 </button>
                             </div>
                             <div class="large-6 columns">
-                                <button type="button" class="button tiny" id="T1-help">帮助</button>
+                                <button type="button" class="button tiny" id="T1-help" data-reveal-id="T1-modal">帮助
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -832,7 +1094,9 @@
                                     </button>
                                 </div>
                                 <div class="large-6 columns">
-                                    <button type="button" class="button tiny" id="pi1-help">帮助</button>
+                                    <button type="button" class="button tiny" id="pi1-help" data-reveal-id="pi1-modal">
+                                        帮助
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -1060,7 +1324,8 @@
                                 </button>
                             </div>
                             <div class="large-6 columns">
-                                <button type="button" class="button tiny" id="pi2-help">帮助</button>
+                                <button type="button" class="button tiny" id="pi2-help" data-reveal-id="pi2-modal">帮助
+                                </button>
                             </div>
                         </div>
                     </div>
