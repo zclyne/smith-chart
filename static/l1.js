@@ -165,14 +165,13 @@ function l1_calculateRRange() {
 function l1_calculateC() {
     var pi = 3.1415926535;
 
-    var l = document.getElementById("l1-s4-l").value;
+    var l = document.getElementById("l1-s4-l").value * 1.0;
     var f = document.getElementById("l1-work-freq").value * 1000000;
     var w = 2 * pi * f;
-    var zzr = document.getElementById("l1-s4-zr").value;
-    var zzi = document.getElementById("l1-s4-zi").value;
+    var zzr = document.getElementById("l1-s4-zr").value * 1.0;
+    var zzi = document.getElementById("l1-s4-zi").value * 1.0;
     var zload = new Complex(zzr,zzi);
     var a = new Complex(1, 0);
-    //var yload = complexDivide(a, zload);
 
     var zloadg = new Complex(zload.r, Math.sqrt(zload.r * 50 - zload.r * zload.r));
     var yloadg = new Complex(0.02, complexDivide(a, zloadg).i);

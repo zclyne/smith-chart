@@ -208,6 +208,7 @@
             <li class="tab-title"><a href="#menu4">TⅡ型</a></li>
             <li class="tab-title"><a href="#menu5">πⅠ型</a></li>
             <li class="tab-title" id="tab6"><a href="#menu6">πⅡ型</a></li>
+            <li class="tab-title"><a href="#about">关于</a></li>
         </ul>
     </section>
 </nav>
@@ -840,11 +841,238 @@
                         </div>
                     </div>
                 </div>
-                <script src="static/l1.js"></script>
+                <script src="static/L1.js"></script>
             </div>
             <div class="content" id="menu2">
-                <h3>菜单 2</h3>
-                <p>一些文本内容 2</p>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <img src="static/img/circuit_L2.png" height="50" />
+                    </div>
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                            <div class="large-6 columns">
+                                <p>工作频率(MHz)</p>
+                            </div>
+                            <div class="large-6 columns">
+                                <input class="selection-values" id="l2-work-freq" type="text"
+                                       placeholder="----" />
+                            </div>
+                        </div>
+                        <div class="row collapse">
+                            <div class="large-6 columns">
+                                <button type="button" class="button tiny" id="l2-start" onclick=" l2_click_start()">开始</button>
+                            </div>
+                            <div class="large-6 columns">
+                                <button type="button" class="button tiny" data-reveal-id="l2-modal">帮助</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="large-6 columns">
+                            <p>设置元件参数</p>
+                            <form>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>L(uH)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-l" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                    <div class="large-5 columns">
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>C1(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-c1-lower" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-c1-upper" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>C2(pF)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-c2-lower" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-c2-upper" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                </div>
+                            </form>
+                            <hr />
+                            <form>
+                                <button type="button" class="button tiny" onclick=" l2_calculateRRange()">计算可匹配负载阻抗范围</button>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>实部</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-g-real-lower" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-g-real-upper" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>虚部</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-g-imag-lower" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>～</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-g-imag-upper" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="large-6 columns">
+                            <p>设置负载和电感值</p>
+                            <form>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>Z(Ω)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-s4-zr" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                    <div class="large-1 columns selection-values-markup">
+                                        <span class="prefix"><strong>+j</strong></span>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-s4-zi" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                </div>
+                                <div class="row collapse">
+                                    <div class="large-3 columns">
+                                        <p>L(uH)</p>
+                                    </div>
+                                    <div class="large-4 columns">
+                                        <input class="selection-values" id="l2-s4-l" type="text"
+                                               placeholder="----" />
+                                    </div>
+                                    <div class="large-5 columns">
+                                    </div>
+                                </div>
+                            </form>
+                            <hr />
+                            <form>
+                                <div class="row collapse">
+
+                                    <div class="large-6 columns">
+                                        <button type="button" class="button tiny" onclick=" l2_calculateC1()">计算参考电容值(电容值1)</button>
+                                        <div class="row collapse">
+                                            <div class="large-3 columns">
+                                                <p>C1(pF)</p>
+                                            </div>
+                                            <div class="large-4 columns">
+                                                <input class="selection-values" id="l2-1-c1" type="text"
+                                                       placeholder="----" />
+                                            </div>
+                                            <div class="large-5 columns">
+                                            </div>
+                                        </div>
+                                        <div class="row collapse">
+                                            <div class="large-3 columns">
+                                                <p>C2(pF)</p>
+                                            </div>
+                                            <div class="large-4 columns">
+                                                <input class="selection-values" id="l2-1-c2" type="text"
+                                                       placeholder="----" />
+                                            </div>
+                                            <div class="large-5 columns">
+                                            </div>
+                                        </div>
+                                        <div class="row collapse">
+
+                                            <div class="large-6 columns">
+                                                <button type="button" class="button tiny" id="l2-s5-volt">元件承压值</button>
+                                            </div>
+
+                                        </div>
+                                        <div class="row collapse">
+
+                                            <div class="large-6 columns">
+                                                <button type="button" class="button tiny" id="l2-s5-chart">在圆图显示</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="large-6 columns">
+                                        <button type="button" class="button tiny" onclick=" l2_calculateC2()">计算参考电容值(电容值2)</button>
+                                        <div class="row collapse">
+                                            <div class="large-3 columns">
+                                                <p>C1(pF)</p>
+                                            </div>
+                                            <div class="large-4 columns">
+                                                <input class="selection-values" id="l2-2-c1" type="text"
+                                                       placeholder="----" />
+                                            </div>
+                                            <div class="large-5 columns">
+                                            </div>
+                                        </div>
+                                        <div class="row collapse">
+                                            <div class="large-3 columns">
+                                                <p>C2(pF)</p>
+                                            </div>
+                                            <div class="large-4 columns">
+                                                <input class="selection-values" id="l2-2-c2" type="text"
+                                                       placeholder="----" />
+                                            </div>
+                                            <div class="large-5 columns">
+                                            </div>
+                                        </div>
+                                        <div class="row collapse">
+
+                                            <div class="large-6 columns">
+                                                <button type="button" class="button tiny" id="l2-s5-volt">元件承压值</button>
+                                            </div>
+
+                                        </div>
+                                        <div class="row collapse">
+
+                                            <div class="large-6 columns">
+                                                <button type="button" class="button tiny" id="l2-s5-chart">在圆图显示</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script src="static/L2.js"></script>
             </div>
             <div class="content" id="menu3">
                 <div class="row">
@@ -1058,13 +1286,13 @@
                 <script src="static/T1.js"></script>
             </div>
             <div class="content" id="menu4">
-                <h3>菜单 4</h3>
-                <p>一些文本内容 4</p>
+                <h3>T II 型电路匹配</h3>
+                <p>暂未实现</p>
             </div>
             <div class="content" id="menu5">
                 <div class="row">
                     <div class="large-6 columns">
-                        <img src="static/img/pi1.jpg" height="50"/>
+                        <img src="static/img/circuit_pi1.jpg" height="50"/>
                     </div>
                     <div class="large-6 columns">
                         <div class="row collapse">
@@ -1301,7 +1529,7 @@
             <div class="content" id="menu6">
                 <div class="row">
                     <div class="large-6 columns">
-                        <img src="static/img/pi2.jpg" height="50"/>
+                        <img src="static/img/circuit_pi2.jpg" height="50"/>
                     </div>
                     <div class="large-6 columns">
                         <div class="row collapse">
@@ -1529,6 +1757,18 @@
 
                 <script src="static/pi2.js"></script>
 
+            </div>
+            <div class="content" id="about">
+                <h3>圆图及负载匹配模拟软件</h3>
+                <p></p>
+                <p>导航栏为系统功能菜单，共有圆图、L1、L2、π1、π2、T1负载匹配六大功能。</p>
+                <p>对于圆图功能，点击圆图进入该功能页面，软件自动跟踪鼠标在Smith圆图上定位，
+                    按下鼠标左键即可显示相应阻抗、导纳、反射系数、VSWR的数值。</p>
+                <p>对于负载匹配的功能，根据需要的负载匹配类型，点击相关按钮，进入该页面，
+                    首先输入工作频率，并按开始。按提示设置相应的原件参数，点击计算即可计算相应参数指标。
+                    并可点击右下角“作图”按钮，即可将结果在页面左侧圆图中显示。(暂未实现）</p>
+                <p>开发者：冯冬辉、黄度、胡经川、陈烨、江帅，联系我们：<a href="https://github.com/faymek/smith-chart">github</a></p>
+                <p>版本：0.6beta，更新时间：2018年12月31日</p>
             </div>
         </div>
     </div>
