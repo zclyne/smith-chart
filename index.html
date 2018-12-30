@@ -411,7 +411,8 @@
 
                         <div class="row collapse">
                             <div class="large-6 columns">
-                                <button type="button" class="button tiny" id="l1-start" onclick="l1_click_start()">开始</button>
+                                <button type="button" class="button tiny" id="l1-start" onclick="l1_click_start()">开始
+                                </button>
                             </div>
                             <div class="large-6 columns">
                                 <button type="button" class="button tiny" data-reveal-id="l1-modal">帮助</button>
@@ -471,7 +472,9 @@
                             <hr/>
                             <form>
 
-                                <button type="button" class="button tiny" id="l1-s3-comp" onclick="l1_calculateRRange()">计算可匹配负载阻抗范围</button>
+                                <button type="button" class="button tiny" id="l1-s3-comp"
+                                        onclick="l1_calculateRRange()">计算可匹配负载阻抗范围
+                                </button>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
                                         <p>实部</p>
@@ -541,7 +544,9 @@
                             <hr/>
                             <form>
 
-                                <button type="button" class="button tiny" id="l1-s5-comp" onclick="l1_calculateC()">计算参考电容值</button>
+                                <button type="button" class="button tiny" id="l1-s5-comp" onclick="l1_calculateC()">
+                                    计算参考电容值
+                                </button>
                                 <div class="row collapse">
                                     <div class="large-3 columns">
                                         <p>C1(pF)</p>
@@ -566,10 +571,12 @@
                                 </div>
                                 <div class="row collapse">
                                     <div class="large-6 columns">
-                                        <button type="button" class="button tiny" id="l1-s5-volt">元件承压值</button>
+                                        <button type="button" class="button tiny secondary" id="l1-s5-volt">元件承压值
+                                        </button>
                                     </div>
                                     <div class="large-6 columns">
-                                        <button type="button" class="button tiny" id="l1-s5-chart">在圆图显示</button>
+                                        <button type="button" class="button tiny secondary" id="l1-s5-chart">在圆图显示
+                                        </button>
                                     </div>
                                 </div>
                             </form>
@@ -583,8 +590,214 @@
                 <p>一些文本内容 2</p>
             </div>
             <div class="content" id="menu3">
-                <h3>菜单 3</h3>
-                <p>一些文本内容 3</p>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <img src="static/img/circuit_T1.png" height="60"/>
+                    </div>
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                            <div class="large-6 columns">
+                                <p>工作频率(MHz)</p>
+                            </div>
+                            <div class="large-6 columns">
+                                <input class="selection-values" id="T1-work-freq" type="text" placeholder="----"
+                                       style="color: lightgray;">
+                            </div>
+                        </div>
+
+                        <div class="row collapse">
+                            <div class="large-6 columns">
+                                <button type="button" class="button tiny" id="T1-start" onclick="T1_click_start()">开始
+                                </button>
+                            </div>
+                            <div class="large-6 columns">
+                                <button type="button" class="button tiny" id="T1-help">帮助</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <hr/>
+                <div class="row">
+                    <div class="large-6 columns">
+                        <p>设置元件参数</p>
+                        <form>
+                            <div class="row ">
+                                <div class="large-3 columns">
+                                    <p>L(uH)</p>
+                                </div>
+                                <div class="large-3 columns">
+                                    <input class="selection-values" id="T1-L" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+
+                                <div class="large-3 columns">
+                                    <p>C3(pF)</p>
+                                </div>
+                                <div class="large-3 columns">
+                                    <input class="selection-values" id="T1-C3" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>C1(pF)</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-C1-LOWER" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-1 columns selection-values-markup">
+                                    <span class="prefix"><strong>～</strong></span>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-C1-UPPER" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>C2(pF)</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-C2-LOWER" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-1 columns selection-values-markup">
+                                    <span class="prefix"><strong>～</strong></span>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-C2-UPPER" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                            </div>
+                        </form>
+                        <hr/>
+                        <form>
+                            <p>&nbsp;</p>
+                            <p>&nbsp;</p>
+
+                            <button type="button" class="button tiny" onclick="T1_calculateRRange()">计算可匹配负载阻抗范围
+                            </button>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>实部</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-r-real-lower" type="text"
+                                           placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-1 columns selection-values-markup">
+                                    <span class="prefix"><strong>～</strong></span>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-r-real-upper" type="text"
+                                           placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>虚部</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-r-imag-lower" type="text"
+                                           placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-1 columns selection-values-markup">
+                                    <span class="prefix"><strong>～</strong></span>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-r-imag-upper" type="text"
+                                           placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="large-6 columns">
+                        <p>再次设置C3和L，重新计算</p>
+                        <form>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>C3(pF)</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-c3-reset" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-5 columns">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>L(uH)</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-l-reset" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-5 columns">
+                                </div>
+                            </div>
+                            <button type="button" class="button tiny" onclick="T1_recalcu()">确定 C3 和 L</button>
+                            <hr/>
+                            <p>设置负载和固定元件值</p>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>Z(Ω)</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-z-real" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-1 columns selection-values-markup">
+                                    <span class="prefix"><strong>+j</strong></span>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-z-imag" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                            </div>
+
+                        </form>
+                        <hr/>
+                        <form>
+
+                            <button type="button" class="button tiny" onclick="T1_calculateC()">计算参考电容</button>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>C1(pF)</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-c1-2" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-5 columns">
+                                </div>
+                            </div>
+                            <div class="row collapse">
+                                <div class="large-3 columns">
+                                    <p>C2(pF)</p>
+                                </div>
+                                <div class="large-4 columns">
+                                    <input class="selection-values" id="T1-c2-2" type="text" placeholder="----"
+                                           style="color: lightgray;">
+                                </div>
+                                <div class="large-5 columns">
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="large-6 columns">
+                                    <button type="button" class="button tiny" id="T1-plot">在圆图显示</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <script src="static/T1.js"></script>
             </div>
             <div class="content" id="menu4">
                 <h3>菜单 4</h3>
@@ -687,7 +900,7 @@
                         <hr>
                         <form>
 
-                            <button type="button" class="button tiny" onclick="firstcalcu()">计算可匹配的负载与 C3 并联后的阻抗范围
+                            <button type="button" class="button tiny" onclick="pi1_firstcalcu()">计算可匹配的负载与 C3 并联后的阻抗范围
                             </button>
                             <div class="row collapse">
                                 <div class="large-2 columns">
@@ -729,7 +942,7 @@
                                 <p>再次设置 C3 和 L，重新计算</p>
                             </div>
                             <div class="large-4 columns">
-                                <button type="button" class="button tiny" onclick="recalcu()">确定 C3 和 L</button>
+                                <button type="button" class="button tiny" onclick="pi1_recalcu()">确定 C3 和 L</button>
                             </div>
                         </div>
 
@@ -761,7 +974,7 @@
                                     <p>设置负载值</p>
                                 </div>
                                 <div class="large-8 columns">
-                                    <button type="button" class="button tiny">转换成和 C3 并联后的阻抗（时间原因不做了）</button>
+                                    <button type="button" class="button tiny secondary">转换成C3并联后的阻抗</button>
                                 </div>
 
                                 <div class="large-2 columns">
@@ -807,14 +1020,14 @@
 
                             <div class="row collapse">
                                 <div class="large-5 columns">
-                                    <button type="button" class="button tiny" onclick="calculateC()">计算参考电容</button>
+                                    <button type="button" class="button tiny" onclick="pi1_calculateC()">计算参考电容</button>
                                 </div>
 
                                 <div class="large-4 columns">
-                                    <button type="button" class="button tiny">元件承压值</button>
+                                    <button type="button" class="button tiny secondary">元件承压值</button>
                                 </div>
                                 <div class="large-3 columns">
-                                    <button type="button" class="button tiny" id="pi1-plot">作图</button>
+                                    <button type="button" class="button tiny secondary" id="pi1-plot">作图</button>
                                 </div>
                             </div>
                         </form>
@@ -914,7 +1127,7 @@
                         <hr>
                         <form>
 
-                            <button type="button" class="button tiny" onclick="firstcalcu()">计算可匹配的负载与 C3 并联后的阻抗范围
+                            <button type="button" class="button tiny" onclick="pi2_firstcalcu()">计算可匹配的负载与 C3 并联后的阻抗范围
                             </button>
                             <div class="row collapse">
                                 <div class="large-2 columns">
@@ -960,7 +1173,7 @@
                                 <p>再次设置 C3 和 L，重新计算</p>
                             </div>
                             <div class="large-4 columns">
-                                <button type="button" class="button tiny" onclick="recalcu()">确定 C3 和 L</button>
+                                <button type="button" class="button tiny" onclick="pi2_recalcu()">确定 C3 和 L</button>
                             </div>
                         </div>
 
@@ -992,7 +1205,7 @@
                                     <p>设置负载值</p>
                                 </div>
                                 <div class="large-8 columns">
-                                    <button type="button" class="button tiny">转换成和 C3 并联后的阻抗（不做了）</button>
+                                    <button type="button" class="button tiny secondary">转换成C3并联后的阻抗</button>
                                 </div>
 
                                 <div class="large-2 columns">
@@ -1038,14 +1251,14 @@
 
                             <div class="row collapse">
                                 <div class="large-5 columns">
-                                    <button type="button" class="button tiny" onclick="calculateC()">计算参考电容</button>
+                                    <button type="button" class="button tiny" onclick="pi2_calculateC()">计算参考电容</button>
                                 </div>
 
                                 <div class="large-4 columns">
-                                    <button type="button" class="button tiny">元件承压值</button>
+                                    <button type="button" class="button tiny secondary">元件承压值</button>
                                 </div>
                                 <div class="large-3 columns">
-                                    <button type="button" class="button tiny" id="pi2-plot">作图</button>
+                                    <button type="button" class="button tiny secondary" id="pi2-plot">作图</button>
                                 </div>
                             </div>
                         </form>

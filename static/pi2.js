@@ -100,7 +100,7 @@ function pi2_click_start() {
     document.getElementById("pi2-c2-upper").value = c2max;
 }
 
-function calculateRRange(l, c3) {
+function pi2_calculateRRange(l, c3) {
     var pi = 3.1415926535;
     //var l=document.getElementById("pi2-l").value/1000000.0;
     var f = document.getElementById("pi2-work-freq").value * 1000000.0;
@@ -116,12 +116,13 @@ function calculateRRange(l, c3) {
     var d = Math.floor(c1max - c1min);
     var complex_array = new Array();
 
+
     complex_array[0] = new Complex(0,0);
-    var temp = 0;
-    for (var ci = c1min; ci < c1max; ci++) {
+    var ci = c1min;
+    for (var i = 0; i < d; i++) {
         yloadg.i = 2 * pi * f * ci / 1000000000000;
-        complex_array[temp] = complexDivide(a, yloadg);
-        temp++;
+        complex_array[i] = complexDivide(a, yloadg);
+        ci++;
     }
 
     var rmax = complex_array[0].r;
@@ -157,19 +158,19 @@ function calculateRRange(l, c3) {
 
 }
 
-function firstcalcu() {
+function pi2_firstcalcu() {
     var l = document.getElementById("pi2-l").value / 1000000.0;
     var c3 = 0.01 / (2 * 3.1415926535 * document.getElementById("pi2-work-freq").value * 1000000.0);
-    calculateRRange(l, c3);
+    pi2_calculateRRange(l, c3);
 }
 
-function recalcu() {
+function pi2_recalcu() {
     var l = document.getElementById("pi2-l-reset").value / 1000000.0;
     var c3 = document.getElementById("pi2-c3-reset").value * 1000000.0;
     calculateRRange(l, c3);
 }
 
-function calculateC() {
+function pi2_calculateC() {
     var pi = 3.1415926535;
 
     var c3 = document.getElementById("pi2-c3-reset").value / 1000000000000;
@@ -197,6 +198,5 @@ function calculateC() {
 
     document.getElementById("pi2-c1-2").value = c1;
     document.getElementById("pi2-c2-2").value = c2;
-
 
 }
