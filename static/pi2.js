@@ -100,6 +100,7 @@ function pi2_click_start() {
     $("#pi2-c2-upper").val(c2max.toFixed(2));
 }
 
+// 计算负载的实部范围
 function pi2_calculateRRange(l) {
     let pi = 3.1415926535;
     let f = $("#pi2-work-freq").val() * 1000000.0;
@@ -154,18 +155,21 @@ function pi2_calculateRRange(l) {
 
 }
 
+// 计算可匹配的负载与 C3 并联后的阻抗范围
 function pi2_firstcalcu() {
     let l = $("#pi2-l").val() / 1000000.0;
     let c3 = 0.01 / (2 * 3.1415926535 * $("#pi2-work-freq").val() * 1000000.0);
     pi2_calculateRRange(l);
 }
 
+// 确定C3和l
 function pi2_recalcu() {
     let l = $("#pi2-l-reset").val() / 1000000.0;
     let c3 = $("#pi2-c3-reset").val() * 1000000.0;
-    calculateRRange(l, c3);
+    pi2_calculateRRange(l, c3);
 }
 
+// 计算c1和c2的取值
 function pi2_calculateC() {
     let c3 = $("#pi2-c3-reset").val() / 1000000000000;
     let l = parseFloat($("#pi2-l-reset").val());
