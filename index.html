@@ -269,10 +269,12 @@
 </div>
 <div id="T1-modal" class="reveal-modal" data-reveal>
     <h3>T I 型电路匹配 </h3>
-    <p>在本程序中T型匹配电路，用来匹配阻抗实部0.1~200，虚部-90.0~1000的负载。
-        但是注意并非所有在这个范围内的负载都能得到匹配。
-        建议参照以下数据确定初始输入值， 并按照实际设计要求调整参数。
-        如输入不合理将可能导致错误的结果！注意匹配范围是以导纳形式给出！！
+    <p>本程序的T型匹配电路可以用来匹配负载，阻抗实部0.1~200，虚部-90.0~1000。
+        建议参照以下表格设置输入参数。
+        step1:输入工作频率后点击开始，可得到元件参考参数的范围；
+        step2:设置C3和L后点击确定，再点击计算负载范围，可得到可匹配负载的导纳范围；
+        atep3:设置负载等固定元件的值后点击计算参考电容，可以得到C1和C2值。
+        鼠标在史密斯图上点一下它会固定住，数字就可以清晰地显示。
     </p>
     <div style="overflow-x:auto">
         <table>
@@ -759,7 +761,7 @@
                     <div class="large-6 columns">
                         <div class="row collapse">
                             <div class="large-6 columns">
-                                <p>工作频率 (MHz)</p>
+                                <p>step1:工作频率 (MHz)</p>
                             </div>
                             <div class="large-6 columns">
                                 <input class="selection-values" id="T1-work-freq" type="text" placeholder="----"
@@ -785,21 +787,21 @@
                 <hr/>
                 <div class="row">
                     <div class="large-6 columns">
-                        <p>设置元件参数</p>
+                        <p>元件参数范围</p>
                         <form>
                             <div class="row ">
-                                <div class="large-3 columns">
+                                <div class="large-5 columns">
                                     <p>L(uH)</p>
                                 </div>
-                                <div class="large-3 columns">
+                                <div class="large-5 columns">
                                     <input class="selection-values" id="T1-L" type="text" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
-
-                                <div class="large-3 columns">
+                                <hr/>
+                                <div class="large-5 columns">
                                     <p>C3(pF)</p>
                                 </div>
-                                <div class="large-3 columns">
+                                <div class="large-5 columns">
                                     <input class="selection-values" id="T1-C3" type="text" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
@@ -840,7 +842,7 @@
                         <hr/>
                         <form>
                             <button type="button" class="button tiny radius"
-                                    onclick="T1_calculateRRange()">计算可匹配负载阻抗范围
+                                    onclick="T1_calculateRRange()">计算可匹配负载导纳范围
                             </button>
                             <div class="row collapse">
                                 <div class="large-3 columns">
@@ -881,7 +883,7 @@
                         </form>
                     </div>
                     <div class="large-6 columns">
-                        <p>再次设置C3和L，重新计算</p>
+                        <p>step2:重新设置C3和L</p>
                         <form>
                             <div class="row collapse">
                                 <div class="large-3 columns">
@@ -893,7 +895,9 @@
                                 </div>
                                 <div class="large-5 columns">
                                 </div>
+
                             </div>
+
                             <div class="row collapse">
                                 <div class="large-3 columns">
                                     <p>L(uH)</p>
@@ -908,7 +912,7 @@
                             <button type="button" class="button tiny radius"
                                     onclick="T1_recalcu()">确定 C3 和 L</button>
                             <hr/>
-                            <p>设置负载和固定元件值</p>
+                            <p>step3:设置负载等固定元件值</p>
                             <div class="row collapse">
                                 <div class="large-3 columns">
                                     <p>Z(Ω)</p>
