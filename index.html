@@ -759,7 +759,7 @@
                     <div class="large-6 columns">
                         <div class="row collapse">
                             <div class="large-6 columns">
-                                <p>工作频率 (MHz)</p>
+                                <p>Step1: 工作频率 (MHz)</p>
                             </div>
                             <div class="large-6 columns">
                                 <input class="selection-values" id="T1-work-freq" type="text" placeholder="----"
@@ -785,7 +785,7 @@
                 <hr/>
                 <div class="row">
                     <div class="large-6 columns">
-                        <p>设置元件参数</p>
+                        <p>Step2: 设置元件参数范围</p>
                         <form>
                             <div class="row ">
                                 <div class="large-3 columns">
@@ -881,7 +881,7 @@
                         </form>
                     </div>
                     <div class="large-6 columns">
-                        <p>再次设置C3和L，重新计算</p>
+                        <p>Step4: 重新设置C3和L</p>
                         <form>
                             <div class="row collapse">
                                 <div class="large-3 columns">
@@ -906,9 +906,9 @@
                                 </div>
                             </div>
                             <button type="button" class="button tiny radius"
-                                    onclick="T1_recalcu()">确定 C3 和 L</button>
+                                    onclick="T1_recalcu()">确定</button>
                             <hr/>
-                            <p>设置负载和固定元件值</p>
+                            <p>Step5: 设置负载和固定元件值</p>
                             <div class="row collapse">
                                 <div class="large-3 columns">
                                     <p>Z(Ω)</p>
@@ -1246,7 +1246,7 @@
                                 </div>
 
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-l" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-l" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
 
@@ -1254,7 +1254,7 @@
                                     <p>C3(pF)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c3" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c3" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
 
@@ -1264,14 +1264,14 @@
                                     <p>C1(pF)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c1-lower" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c1-lower" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                                 <div class="large-2 columns selection-values-markup">
                                     <span class="prefix"><strong>～</strong></span>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c1-upper" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c1-upper" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                             </div>
@@ -1280,14 +1280,14 @@
                                     <p>C2(pF)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c2-lower" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c2-lower" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                                 <div class="large-2 columns selection-values-markup">
                                     <span class="prefix"><strong>～</strong></span>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c2-upper" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c2-upper" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                             </div>
@@ -1303,7 +1303,7 @@
                                     <p>实部 (Ω)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-r-real-lower" type="text"
+                                    <input class="selection-values" id="pi2-r-real-lower" type="number"
                                            placeholder="----"
                                            style="color: lightgray;">
                                 </div>
@@ -1311,7 +1311,7 @@
                                     <span class="prefix"><strong>～</strong></span>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-r-real-upper" type="text"
+                                    <input class="selection-values" id="pi2-r-real-upper" type="number"
                                            placeholder="----"
                                            style="color: lightgray;">
                                 </div>
@@ -1321,7 +1321,7 @@
                                     <p>虚部</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-r-imag-lower" type="text"
+                                    <input class="selection-values" id="pi2-r-imag-lower" type="number"
                                            placeholder="----"
                                            style="color: lightgray;">
                                 </div>
@@ -1329,7 +1329,7 @@
                                     <span class="prefix"><strong>～</strong></span>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-r-imag-upper" type="text"
+                                    <input class="selection-values" id="pi2-r-imag-upper" type="number"
                                            placeholder="----"
                                            style="color: lightgray;">
                                 </div>
@@ -1353,7 +1353,7 @@
                                     <p>L(uH)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-l-reset" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-l-reset" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                                 <div class="large-2 columns">
@@ -1361,7 +1361,7 @@
                                     </p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c3-reset" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c3-reset" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                             </div>
@@ -1382,14 +1382,14 @@
                                     <p>Z(Ω)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-z-real" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-z-real" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                                 <div class="large-2 columns selection-values-markup">
                                     <span class="prefix"><strong>+j</strong></span>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-z-imag" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-z-imag" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                             </div>
@@ -1402,14 +1402,14 @@
                                     <p>C1(pF)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c1-2" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c1-2" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
                                 <div class="large-2 columns">
                                     <p>C2(pF)</p>
                                 </div>
                                 <div class="large-4 columns">
-                                    <input class="selection-values" id="pi2-c2-2" type="text" placeholder="----"
+                                    <input class="selection-values" id="pi2-c2-2" type="number" placeholder="----"
                                            style="color: lightgray;">
                                 </div>
 
