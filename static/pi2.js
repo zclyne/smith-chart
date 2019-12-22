@@ -1,5 +1,3 @@
-const pi = 3.1415926535;
-
 function pi2_click_start() {
     let f = parseFloat($("#pi2-work-freq").val()), l;
     if (f >= 1 && f < 2) {

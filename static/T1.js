@@ -1,7 +1,5 @@
-const pi = 3.1415926535;
-
 function T1_click_start() {
-    let f = document.getElementById("T1-work-freq").value, l;
+    let f = parseFloat($("#T1-work-freq").val()), l;
     if (f >= 2 && f < 3) {
         l = 8;
     }
@@ -44,10 +42,10 @@ function T1_click_start() {
     if (f > 133) {
         alert("Illegal input!");
     }
-    document.getElementById("T1-L").value = l;
+    $("#T1-L").val(l);
     let w = 2 * pi * f * 1000000;
     let c3 = Math.sqrt(1/7500) / w;
-    document.getElementById("T1-C3").value = c3 * 1000000000000;
+    $("#T1-C3").val(c3 * 1000000000000);
     let ll = l / 1000000.0;
     let xmin = -90.0,
         xmax = 1000.0;
@@ -73,34 +71,35 @@ function T1_click_start() {
 		}
 	}
 
-	document.getElementById("T1-C1-UPPER").value = 1/c11max / w * 1000000000000;
-    document.getElementById("T1-C1-LOWER").value = 1/c11min / w * 1000000000000;
+	$("#T1-C1-UPPER").val(1/c11max / w * 1000000000000);
+    $("#T1-C1-LOWER").val(1/c11min / w * 1000000000000);
 
-	document.getElementById("T1-C2-UPPER").value = (c2max);
-    document.getElementById("T1-C2-LOWER").value = (c2min);
+	$("#T1-C2-UPPER").val(c2max);
+    $("#T1-C2-LOWER").val(c2min);
 }
 
 function T1_calculateRRange() {
-    let f = document.getElementById("T1-work-freq").value * 1000000.0;
-    let c1min = document.getElementById("T1-C1-LOWER").value/1000000000000;
-    let c1max = document.getElementById("T1-C1-UPPER").value/1000000000000;
-    let c2min = document.getElementById("T1-C2-LOWER").value*1;
-    let c2max = document.getElementById("T1-C2-UPPER").value*1;
-	let c3= document.getElementById("T1-c3-reset").value/1000000000000;
+    let f = $("#T1-work-freq").val() * 1000000.0;
+    let c1min = $("#T1-C1-LOWER").val() / 1000000000000;
+    let c1max = $("#T1-C1-UPPER").val() / 1000000000000;
+    let c2min = parseFloat($("#T1-C2-LOWER").val());
+    let c2max = parseFloat($("#T1-C2-UPPER").val());
+	let c3= $("#T1-c3-reset").val() / 1000000000000;
     let w = 2 * pi * f;
-	let ll= document.getElementById("T1-L").value/1000000;
+	let ll = $("#T1-L").val() / 1000000;
     let a = new Complex(1, 0);
     let Zc3 = new Complex(50, 1/(w * c3));
 	let Yc3 = complexDivide(a,Zc3);
-	let Yc2= new Complex(Yc3.r,Yc3.i- 1 / (w * ll - 1 / (w * c2 / 1000000000000)));
-	document.getElementById("T1-r-real-upper").value = 1/Yc2.r;
-	let Yc2min=new Complex(Yc3.r,Yc3.i - 1 / (w * ll - 1 / (w * c2min / 1000000000000)));
+	// TODO: check what is c2 here
+	let Yc2 = new Complex(Yc3.r,Yc3.i- 1 / (w * ll - 1 / (w * c2 / 1000000000000)));
+	$("#T1-r-real-upper").val(1/Yc2.r);
+	let Yc2min = new Complex(Yc3.r,Yc3.i - 1 / (w * ll - 1 / (w * c2min / 1000000000000)));
 
-	let Zc2min= complexDivide(a,Yc2min);
+	let Zc2min = complexDivide(a,Yc2min);
 	if (Zc2min.r <= 0.001){
-        Zc2min.r=0.001;
+        Zc2min.r = 0.001;
 	}
-	document.getElementById("T1-r-real-lower").value = Zc2min.r;
+	$("#T1-r-real-lower").val(Zc2min.r);
 
 	let d1 = Math.floor(c2max - c2min);
 	let c111=[];
@@ -115,23 +114,23 @@ function T1_calculateRRange() {
 			X1max=-c111[i+1] /  ((50 / (50 ^ 2 + 1 / (w * c3) ^ 2)) ^ 2 + c111[i+1] ^ 2) - 1 / (w * c1min);
 		}
 	}
-	document.getElementById("T1-r-imag-upper").value = -X1max;
+	$("#T1-r-imag-upper").val(-X1max);
 	let X1min= -c111[0] / ((50 / (50 ^ 2 + 1 / (w * c3) ^ 2)) ^ 2 + c111[0] ^ 2) - 1 / (w * c1max);
 	for (let i=0; i< d1 ;++i){
 		if (X1min < -c111[i+1] / ((50 / (50 ^ 2 + 1 / (w * c3) ^ 2)) ^ 2 + c111[i+1] ^ 2) - 1 / (w * c1max)){
 			X1min= -c111[i+1] / ((50 / (50 ^ 2 + 1 / (w * c3) ^ 2)) ^ 2 + c111[i+1] ^ 2) - 1 / (w * c1max);
 		}
 	}
-    document.getElementById("T1-r-imag-lower").value = X1min*10;
+    $("#T1-r-imag-lower").val(X1min*10);
 }
 
 function T1_calculateC() {
-    let c3 = document.getElementById("T1-c3-reset").value / 1000000000000;
-    let ll = document.getElementById("T1-l-reset").value/1000000;
-    let f = document.getElementById("T1-work-freq").value * 1000000;
+    let c3 = $("#T1-c3-reset").val() / 1000000000000;
+    let ll = $("#T1-l-reset").val() /1000000;
+    let f = $("#T1-work-freq").val() * 1000000;
     let w = 2 * pi * f;
-    let zzr = document.getElementById("T1-z-real").value*1;
-    let zzi = document.getElementById("T1-z-imag").value*1;
+    let zzr = parseFloat($("#T1-z-real").val());
+    let zzi = parseFloat($("#T1-z-imag").val());
     let zload = new Complex();
     zload.r = zzr;
     zload.i = zzi;
@@ -146,6 +145,6 @@ function T1_calculateC() {
     let c1 = 1/(zload.i-Zc1.i)/w*1000000000000;
     let c2 = 1 / (w * ll - 1/(Yc1.i-Yc2.i)) / w * 1000000000000;
 
-    document.getElementById("T1-c1-2").value = c1;
-    document.getElementById("T1-c2-2").value = c2;
+    $("#T1-c1-2").val(c1);
+    $("#T1-c2-2").val(c2);
 }
