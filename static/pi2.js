@@ -1,3 +1,5 @@
+var pi = 3.1415926535;
+
 function pi2_click_start() {
     let f = parseFloat($("#pi2-work-freq").val()), l;
     if (f >= 1 && f < 2) {
@@ -156,7 +158,6 @@ function pi2_calculateRRange(l) {
 // 计算可匹配的负载与 C3 并联后的阻抗范围
 function pi2_firstcalcu() {
     let l = $("#pi2-l").val() / 1000000.0;
-    let c3 = 0.01 / (2 * 3.1415926535 * $("#pi2-work-freq").val() * 1000000.0);
     pi2_calculateRRange(l);
 }
 
@@ -189,5 +190,4 @@ function pi2_calculateC() {
 
     $("#pi2-c1-2").val(c1.toFixed(2));
     $("#pi2-c2-2").val(c2.toFixed(2));
-
 }

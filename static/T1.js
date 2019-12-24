@@ -1,3 +1,5 @@
+var pi = 3.1415926535;
+
 function T1_click_start() {
     let f = parseFloat($("#T1-work-freq").val()), l;
     if (f >= 2 && f < 3) {
